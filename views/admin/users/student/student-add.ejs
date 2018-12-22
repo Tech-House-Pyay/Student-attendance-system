@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1 style="color:green;">Student Add!!</h1><p>
+  <form class="" action="/admin/students/add" method="post">
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" class="form-control" id="name" name="stuname" value=""><p>
+    </div>
+    <div class="form-group">
+      <label for="email"> Email:</label>
+      <input type="email" class="form-control" id="email" name="stuemail" value=""><p>
+    </div>
+    <div class="form-group">
+      <label for="password"> Init password:</label>
+      <input type="password" class="form-control" id="password" name="stupwd" value=""><p>
+    </div>
+
+    <div class="form-group">
+      <label for="major">Major:</label>
+      <select class="form-control" id="major" name="stumajor">
+        <option value="00">Computer Science</option>
+        <option value="01">Computer Technology</option>
+        <option value="10">Computer Science and Technology</option>
+      </select><p>
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <select class="form-control" id="year" name="stuyear">
+          <option value="1">First Year</option>
+          <option value="2">Second Year</option>
+          <option value="3">Third Year</option>
+          <option value="4">Fourth Year</option>
+          <option value="5">fifth Year</option><
+        </select><p>
+      </div>
+      <div class="form-group">
+        <label for="roll"> Roll No:</label>
+        <input type="text" class="form-control" id="roll" name="sturoll" value="">
+      </div><p>
+      <div class="form-group">
+        <label for="class">Class:</label>
+        <select class="form-control" id="class" name="stuclass">
+          <option value="section A">Section A</option>
+          <option value="section B">Section B</option>
+          <option value="section C">Section C</option><p>
+        </select><p>
+      </div>
+      <P>
+        <input type="submit" name="click" value="SUBMIT">
+  </form>
+</body>
+
+</html>

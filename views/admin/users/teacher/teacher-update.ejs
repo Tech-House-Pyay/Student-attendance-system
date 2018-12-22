@@ -11,19 +11,20 @@
   }
 </style>
 <body>
-  <h1 style="color:blue;">Teacher Add!!</h1><p>
-  <form class="" action="/admin/teachers/add" method="post">
+  <h1 style="color:blue;">Teacher Update!!</h1><p>
+  <form class="" action="/admin/teachers/update" method="post">
+    <input type="hidden" name="id" value="<%= teacher._id %>">
     <div class="form-group">
       <label for="name">Name: </label>
-      <input type="text" class="form-control" id="name" name="teaname" value=""><p>
+      <input type="text" class="form-control" id="name" name="teaname" value="<%= teacher.name %>"><p>
     </div>
     <div class="form-group">
       <label for="email"> Email:</label>
-      <input type="email" class="form-control" id="email" name="teaemail" value=""><p>
+      <input type="email" class="form-control" id="email" name="teaemail" value="<%= teacher.email %>"><p>
     </div>
     <div class="form-group">
       <label for="password"> Init password:</label>
-      <input type="password" class="form-control" id="password" name="teapwd" value=""><p>
+      <input type="password" class="form-control" id="password" name="teapwd" value="<%= teacher.password %>"><p>
     </div>
     <div class="form-group">
       <label for="deperment">Deperment:</label>

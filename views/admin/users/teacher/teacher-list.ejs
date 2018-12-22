@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Well Come To!!</title>
+    <style media="screen">
+     td , th{
+        border: 1px solid blue;
+      }
+      td{
+        text-align: center;
+      }
+      a{
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color:blue;">Teacher  List !!</h1>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th> Iint Password</th>
+        <th>Deperment</th>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < teacher.length; i++) {%>
+          <tr colspan="8">
+            <td><a href="/admin/teachers/teacher-detail/<%= teacher[i]._id%>"><%= teacher[i].name %></a></td>
+            <td><%= teacher[i].email %></td>
+            <td><%= teacher[i].password %></td>
+          <td><%= teacher[i].deperment %></td>
+          </tr>
+          <%}%>
+      </tbody>
+    </table>
+  </body>
+</html>

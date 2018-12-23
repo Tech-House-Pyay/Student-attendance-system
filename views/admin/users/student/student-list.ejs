@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Well Come To!!</title>
+    <style media="screen">
+     td , th{
+        border: 1px solid green;
+      }
+      td{
+        text-align: center;
+      }
+      a{
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color:green;">Student List !!</h1>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th> Iint Password</th>
+        <th>Major</th>
+        <th>Year</th>
+        <th>Roll</th>
+        <th>Class</th>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < student.length; i++) {%>
+          <tr colspan="8">
+            <td><a href="/admin/students/student-detail/<%=student[i]._id%>"><%= student[i].name%></a></td>
+            <td><%= student[i].email %></td>
+            <td><%= student[i].password %></td>
+            <td id="mar<%=i%>"></td>
+            <td  id="yea<%=i%>"></td>
+            <td><%= student[i].roll %></td>
+            <td><%= student[i].class %></td>
+          </tr>
+          <script type="text/javascript">
+          var data = document.getElementById('yea<%=i%>');
+          console.log(<%= student[i].year%>);
+            switch ("<%= student[i].year %>") {
+              case "1":
+                  data.innerHTML = "First Year";
+                break;
+                case "2":
+                    data.innerHTML = "Second Year";
+                  break;
+                  case "3":
+                      data.innerHTML = "Third Year";
+                    break;
+                    case "4":
+                     data.innerHTML = "Fourth Year";
+                     case "5":
+                      data.innerHTML = "Final year";
+              default:
+              console.log("Year is not define");
+            }
+            var type = document.getElementById('mar<%=i%>');
+            console.log('marjor',<%= student[i].major%>);
+              switch ("<%= student[i].major %>") {
+                case "00":
+                  type.innerHTML = "CS";
+                  break;
+                  case "01":
+                      type.innerHTML = "CT";
+                    break;
+                    case "10":
+                    type.innerHTML = "CST";
+                      break;
+
+                default:
+                console.log("Marjor is not define");
+              }
+          </script>
+          <%}%>
+      </tbody>
+    </table>
+  </body>
+</html>

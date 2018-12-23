@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Well Come To!!</title>
+</head>
+<body>
+  <div class="container">
+  <h1 style="color:green;">Student Detail<h1>
+  Name:<%= student.name %><p>
+  Email:<%= student.email %><p>
+  Init Password:<%= student.password %><p>
+  Major: <span id="ma"></span> <p>
+  Year:<span id="ya"></span> <p>
+  Roll:<%= student.roll %><p>
+  Class:<%= student.class %><p>
+  <a href="/admin/students/update/<%= student._id %>"><button type="button" name="button">Update</button></a>
+  <button type="button"onClick="del()" name="button">Delete</button>
+  </div>
+  </body>
+  <script type="text/javascript">
+  var maj = document.getElementById('ma');
+  function del(){
+    var con=confirm('are you sure!!!');
+    if(con){
+      location.href='/admin/students/delete/<%= student._id %>';
+    }
+  }
+
+   ('<%= student.major %>'=='00')? maj.innerHTML='CS': ('<%= student.major %>'=='01')?  maj.innerHTML='CT':maj.innerHTML='CST';
+
+
+   var data = document.getElementById('ya');
+   console.log(<%= student.year %>);
+     switch ("<%= student.year %>") {
+       case "1":
+           data.innerHTML = "First Year";
+         break;
+         case "2":
+             data.innerHTML = "Second Year";
+           break;
+           case "3":
+               data.innerHTML = "Third Year";
+             break;
+             case "4":
+
+              data.innerHTML = "Fourth Year";
+              break;
+              case "5":
+               data.innerHTML = "Final year";
+       default:
+       console.log("Year is not define");
+     }
+
+  </script>
+
+
+</html>

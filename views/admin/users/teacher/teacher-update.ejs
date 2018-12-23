@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style media="screen">
+  label{
+    color: blue;
+  }
+</style>
+<body>
+  <h1 style="color:blue;">Teacher Update!!</h1><p>
+  <form class="" action="/admin/teachers/update" method="post">
+    <input type="hidden" name="id" value="<%= teacher._id %>">
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" class="form-control" id="name" name="teaname" value="<%= teacher.name %>"><p>
+    </div>
+    <div class="form-group">
+      <label for="email"> Email:</label>
+      <input type="email" class="form-control" id="email" name="teaemail" value="<%= teacher.email %>"><p>
+    </div>
+    <div class="form-group">
+      <label for="password"> Init password:</label>
+      <input type="password" class="form-control" id="password" name="teapwd" value="<%= teacher.password %>"><p>
+    </div>
+    <div class="form-group">
+      <label for="deperment">Deperment:</label>
+      <select class="form-control" id="deperment" name="teadep">
+        <option value="software">Software</option>
+        <option value="hardware">Hardware</option>
+        <option value="english">English</option>
+        <option value="myanmar">Myanmar</option>
+        <option value="maths">Maths</option>
+        <option value="information system">Information System</option>
+      </select>
+    </div><p>
+    <input type="submit" name="click" value="SUBMIT">
+</body>
+</html>

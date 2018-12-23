@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+    <h1 style="color:blue;"> Teacher Detail<h1>
+    Name:<%= teacher.name %><p>
+    Email:<%= teacher.email %><p>
+    Init Password:<%= teacher.password %><p>
+    Deperment:<%= teacher.deperment %><p>
+      <a href="/admin/teachers/update/<%= teacher._id %>"><button type="button" name="button">Update</button></a>
+      <button type="button"onClick="del()" name="button">Delete</button>
+      </div>
+      </body>
+      <script type="text/javascript">
+      var maj = document.getElementById('ma');
+      function del(){
+        var con=confirm('are you sure!!!');
+        if(con){
+          location.href='/admin/teachers/delete/<%= teacher._id %>';
+        }
+      }
+</script>
+</html>

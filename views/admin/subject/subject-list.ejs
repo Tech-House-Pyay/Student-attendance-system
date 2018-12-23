@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      th , td{
+        border:1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Subjects List..</h1>
+
+      <table>
+      <thead>
+        <!-- <th>teacher_id</th> -->
+        <th>Name</th>
+        <th>Major</th>
+        <th>Year</th>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < subject.length; i++){%>
+          <tr>
+            <!-- <td><%= subject[i].teacher_id %></td> -->
+            <td><a href="/admin/subjects/subject-detail/<%= subject[i]._id %>"><%= subject[i].subname %></a></td>
+            <td id="major<%= i %>"></td>
+            <td id="year<%= i %>"></td>
+          </tr>
+          <script type="text/javascript">
+            var ma = document.getElementById('major<%= i %>');
+            ('<%= subject[i].major %>'=='00')? ma.innerHTML = 'CS' : ('<%= subject[i].major %>'=='01')? ma.innerHTML = 'CT': ma.innerHTML = 'CST';
+            var ye =document.getElementById('year<%= i %>');
+            console.log(<%= subject.year %>);
+            switch("<%= subject[i].year %>"){
+              case "1":
+              ye.innerHTML = 'First Year';
+              break;
+              case "2":
+              ye.innerHTML = 'Second Year';
+              break;
+              case "3":
+              ye.innerHTML = 'Third Year';
+              break;
+              case "4":
+              ye.innerHTML = 'Fourth Year';
+              break;
+              case "5":
+              ye.innerHTML = 'Fifth Year';
+              break;
+              default:
+              console.log('Year is not defined');
+            }
+
+
+            </script>
+        <% } %>
+
+      </tbody>
+      </table>
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Subject Update</h1>
+      <form class="" action="/admin/subjects/update" method="post">
+          <input type="hidden" name="id" value="<%=subject._id%>">
+        <div class="form-group">
+          <label for="subname">Name:</label>
+          <input type="text" class="form-control" id="subname" name="name" value="<%=subject.subname%>">
+        </div>
+        <div class="form-group">
+          <label for="major">Major:</label>
+          <select class="form-control" name="major" id="major">
+            <option value="00">CS</option>
+            <option value="01">CT</option>
+            <option value="10">CST</option>
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="year">Year:</label>
+          <select class="form-control" name="year" id="year">
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+            <option value="4">Fourth Year</option>
+            <option value="5">Fifth Year</option>
+
+          </select>
+        </div>
+        <input type="submit" class="btn btn-primary" name="click" value="Click me">
+      </form>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Subject Detail..</h1>
+    Teacher_id:<%= subject.teacher_id %><p>
+      Name:<%= subject.subname %><p>
+        Major:<span id="major"></span><p>
+          Year:<span id="year"></span><p>
+            <a href="/admin/subjects/update/<%=subject._id %>"><button type="button" name="button">Update</button></a>
+            <button type="button" onclick="del()" name="button">Delete</button>
+  </body>
+  <script type="text/javascript">
+    var ma = document.getElementById('major');
+    ('<%= subject.major %>'=='00')? ma.innerHTML = 'CS' : ('<%= subject.major %>'=='01')? ma.innerHTML = 'CT': ma.innerHTML = 'CST';
+    var ye =document.getElementById('year');
+    console.log(<%= subject.year %>);
+    switch("<%= subject.year %>"){
+      case "1":
+      ye.innerHTML = 'First Year';
+      break;
+      case "2":
+      ye.innerHTML = 'Second Year';
+      break;
+      case "3":
+      ye.innerHTML = 'Third Year';
+      break;
+      case "4":
+      ye.innerHTML = 'Fourth Year';
+      break;
+      case "5":
+      ye.innerHTML = 'Fifth Year';
+      break;
+      default:
+      console.log('Year is not defined');
+    }
+    function del() {
+      var co=confirm('Are yor sure!!?');
+
+    if(co)
+    location.href="/admin/subjects/delete/<%=subject._id %>";
+  }
+
+
+    </script>
+</html>

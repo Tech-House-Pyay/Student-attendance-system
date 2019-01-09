@@ -1,59 +1,189 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+
+<html class="app-ui">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
+  <!-- Meta -->
+  <% include ../../../partial/head %>
+  <!-- End Stylesheets -->
 </head>
 
-<body>
-  <h1 style="color:green;">Student Add!!</h1><p>
-  <form class="" action="/admin/students/add" method="post">
-    <div class="form-group">
-      <label for="name">Name: </label>
-      <input type="text" class="form-control" id="name" name="stuname" value=""><p>
-    </div>
-    <div class="form-group">
-      <label for="email"> Email:</label>
-      <input type="email" class="form-control" id="email" name="stuemail" value=""><p>
-    </div>
-    <div class="form-group">
-      <label for="password"> Init password:</label>
-      <input type="password" class="form-control" id="password" name="stupwd" value=""><p>
-    </div>
+<body class="app-ui layout-has-drawer layout-has-fixed-header">
+  <div class="app-layout-canvas">
+    <div class="app-layout-container">
 
-    <div class="form-group">
-      <label for="major">Major:</label>
-      <select class="form-control" id="major" name="stumajor">
-        <option value="00">Computer Science</option>
-        <option value="01">Computer Technology</option>
-        <option value="10">Computer Science and Technology</option>
-      </select><p>
-      <div class="form-group">
-        <label for="year">Year:</label>
-        <select class="form-control" id="year" name="stuyear">
-          <option value="1">First Year</option>
-          <option value="2">Second Year</option>
-          <option value="3">Third Year</option>
-          <option value="4">Fourth Year</option>
-          <option value="5">fifth Year</option><
-        </select><p>
+      <!-- Drawer -->
+      <aside class="app-layout-drawer">
+
+        <!-- Drawer scroll area -->
+        <div class="app-layout-drawer-scroll">
+          <!-- Drawer logo -->
+          <div id="logo" class="drawer-header">
+            <a href="index.html"><img class="img-responsive" src="assets/img/logo/logo-backend.png" title="AppUI" alt="AppUI" /></a>
+          </div>
+
+          <!-- Drawer navigation -->
+          <nav class="drawer-main">
+            <% include ../../../partial/nav-drawer %>
+          </nav>
+          <!-- End drawer navigation -->
+
+          <div class="drawer-footer">
+            <p class="copyright">AppUI Template &copy;</p>
+            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+          </div>
+        </div>
+        <!-- End drawer scroll area -->
+      </aside>
+      <!-- End drawer -->
+
+      <!-- Header -->
+      <% include ../../../partial/header %>
+      <!-- End header -->
+
+      <main class="app-layout-content">
+
+        <!-- Page Content -->
+        <div class="container-fluid p-y-md">
+
+                      <!-- Registration forms -->
+                      <div class="row">
+                          <div class="col-lg-4">
+                              <!-- Bootstrap registration -->
+                              <div class="card">
+                                  <div class="card-header bg-green bg-inverse">
+                                      <h4>Hello Wellcome To<p><br>
+                                        <em>Student  Add!!</em> </h4>
+                                  <div class="card-block">
+                                      <form class="form-horizontal" action="/admin/students/add" method="post">
+                                          <div class="form-group">
+                                              <label class="col-xs-12" for="register1-username">Name:</label>
+                                              <div class="col-xs-12">
+                                                  <input class="form-control" type="text" id="register1-username" name="stuname" placeholder="Enter username..." />
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="col-xs-12" for="register1-email">Email:</label>
+                                              <div class="col-xs-12">
+                                                  <input class="form-control" type="email" id="register1-email" name="stuemail" placeholder="Enter email..." />
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="col-xs-12" for="register1-password">Init Password:</label>
+                                              <div class="col-xs-12">
+                                                  <input class="form-control" type="password" id="register1-password" name="stupwd" placeholder="Enter password..." />
+                                              </div>
+                                          </div>
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                              <div class="form-material floating">
+                          <label for="major">Major:</label>
+                          <select class="form-control" id="major" name="stumajor">
+                            <option value="00">Computer Science</option>
+                            <option value="01">Computer Technology</option>
+                            <option value="10">Computer Science and Technology</option>
+                          </select><p>
+                          </div>
+                        </div>
+                      </div>
+                          <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="form-material floating">
+                            <label for="year"> Year:</label>
+                            <select class="form-control" id="year" name="stuyear">
+                              <option value="1">First Year</option>
+                              <option value="2">Second Year</option>
+                              <option value="3">Third Year</option>
+                              <option value="4">Fourth Year</option>
+                              <option value="5">fifth Year</option><
+                            </select><p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-xs-12" for="register1-username">Roll:</label>
+                          <div class="col-xs-12">
+                              <input class="form-control" type="text" id="register1-username" name="sturoll" placeholder="Enter username..." />
+                          </div>
+                      </div>
+                          <div class="form-group">
+                            <div class="col-xs-12">
+                               <div class="form-material floating">
+                            <label for="stuclass">Class:</label>
+                            <select class="form-control" id="stuclass" name="stuclass">
+                              <option value="section A">Section A</option>
+                              <option value="section B">Section B</option>
+                              <option value="section C">Section C</option>
+                            </select><p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-block">
+                          <p>
+                              <button class="btn btn-lg btn-teal btn-pill" type="submit">Submit</button>
+                          </p>
+                        </div>
+                    </form>
+                  </div>
+                    <!-- .card-block -->
+                     </div>
+                     <!-- .card -->
+                     <!-- End Material registration -->
+                   </div>
+                     <!-- .col-lg-4 -->
+        <!-- End Page Content -->
+
+      </main>
+
+    </div>
+    <!-- .app-layout-container -->
+  </div>
+  <!-- .app-layout-canvas -->
+
+  <!-- Apps Modal -->
+  <!-- Opens from the button in the header -->
+  <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-sm modal-dialog modal-dialog-top">
+      <div class="modal-content">
+        <!-- Apps card -->
+        <div class="card m-b-0">
+          <div class="card-header bg-app bg-inverse">
+            <h4>Apps</h4>
+            <ul class="card-actions">
+              <li>
+                <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
+              </li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <div class="row text-center">
+              <div class="col-xs-6">
+                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
+                  <i class="ion-speedometer fa-4x"></i>
+                  <p>Admin</p>
+                </a>
+              </div>
+              <div class="col-xs-6">
+                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
+                  <i class="ion-laptop fa-4x"></i>
+                  <p>Frontend</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- .card-block -->
+        </div>
+        <!-- End Apps card -->
       </div>
-      <div class="form-group">
-        <label for="roll"> Roll No:</label>
-        <input type="number" class="form-control" id="roll" name="sturoll" value="">
-      </div><p>
-      <div class="form-group">
-        <label for="class">Class:</label>
-        <select class="form-control" id="class" name="stuclass">
-          <option value="section A">Section A</option>
-          <option value="section B">Section B</option>
-          <option value="section C">Section C</option><p>
-        </select><p>
-      </div>
-      <P>
-        <input type="submit" name="click" value="SUBMIT">
-  </form>
+    </div>
+  </div>
+  <!-- End Apps Modal -->
+
+  <div class="app-ui-mask-modal"></div>
+
+  <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
+  <% include ../../../partial/script %>
+
 </body>
 
 </html>

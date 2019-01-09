@@ -46,17 +46,19 @@
         <!-- Page Content -->
 
         <div class="card-block">
-            <form class="form-horizontal m-t-sm" action="base_forms_samples.html" method="post" onsubmit="return false;">
+            <form class="form-horizontal m-t-sm" action="/admin/subjects/add" method="post" >
               <div class="form-group">
                 <h2 class="m-t-sm m-b">Subjects Add...</h2>
                   <div class="col-xs-12">
                       <div class="form-material floating">
 
                           <label for="teacher_id">Select Teacher:</label>
-                          <select class="form-control" id="teacher_id" name="teaher" size="1">
-                            <option value="00">CS</option>
-                              <option value="01">CT</option>
-                              <option value="10">CST</option>
+                          <select class="form-control" id="teacher_id" name="teacher" size="1">
+                            <% for (var i=0; i< teacher.length; i++){%>
+                                <option value="<%= teacher[i]._id%>"><%= teacher[i].name%></option>
+                            <%}%>
+
+
                           </select>
                       </div>
                   </div>

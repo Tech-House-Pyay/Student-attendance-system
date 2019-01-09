@@ -54,10 +54,12 @@
 
 
                           <label for="teacher_id">Select Teacher:</label>
-                          <select class="form-control" id="teacher_id" name="teaher" size="1">
-                            <option value="00">CS</option>
-                              <option value="01">CT</option>
-                              <option value="10">CST</option>
+                          <select class="form-control" id="teacher_id" name="teacher" size="1">
+                            <% for(var i=0; i< teacher.length; i++){%>
+                              <option value="<%= teacher[i]._id%>"><%= teacher[i].name %></option>
+
+                            <%}%>
+
                           </select>
                       </div>
                   </div>

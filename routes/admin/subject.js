@@ -1,17 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var Subject= require('../../model/Subject');
+var Teacher= require('../../model/Teacher');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+      res.render('index', { title: 'Express' });
 });
 router.get('/add',function(req,res,next){
-  res.render('admin/subject/subj-add');
+  Teacher.find({},function(err,rtn){
+    if(err) throw err;
+  res.render('admin/subject/subj-add',{ teacher:rtn});
+    })
 });
 router.post('/add',function(req,res,next){
-  console.log('call');
+  console.log('call',req.body.teacher);
   var subject=new Subject();
-  // subject.teacher_id=req.body.teacherid;
+  subject.teacher_id=req.body.teacher;
   subject.subname=req.body.name;
   subject.major=req.body.major;
   subject.year=req.body.year;
@@ -24,6 +28,7 @@ router.post('/add',function(req,res,next){
 router.post('/update',function(req,res,next){
   console.log('call');
   var update={
+    teacher_id:req.body.teacher,
     name:req.body.subname,
     major:req.body.major,
     year:req.body.year,
@@ -39,13 +44,16 @@ router.get('/update/:id',function(req,res,next){
   console.log('call');
   Subject.findById(req.params.id,function (err,rtn) {
     if(err)throw err;
-    console.log(rtn);
-    res.render('admin/subject/subject-update',{subject:rtn});
+    Teacher.find({},function(err1,rtn1){
+      if(err1) throw err1;
+      res.render('admin/subject/subject-update',{subject:rtn,teacher:rtn1});
+
+    })
 
   });
 });
 router.get('/subject-detail/:id',function(req,res,next){
-  Subject.findById(req.params.id,function(err,rtn){
+  Subject.findById(req.params.id).populate('teacher_id').exec(function(err,rtn){
     if (err) throw err;
     console.log(rtn);
     res.render('admin/subject/subject-detail',{subject:rtn});

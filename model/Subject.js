@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var SubSchema=new Schema({
   teacher_id:{
     type:Schema.Types.ObjectId,
-    ref:'Teachers',
+    ref:'Teacher',
   },
   subname:{
     type:String,

@@ -45,58 +45,147 @@
 
         <!-- Page Content -->
 
-  <h1 style="color:lightblue;">Student Detail<h1>
-   <div class="container-fluid p-y-md">
-      Name:<em><%= student.name %></em><p>
-          Email:<em><%= student.email %></em></p>
-        Init Password:<em><%= student.password %></em><p>
-       Major:<em><span id="ma"></span> </em><p>
-       Year:<em><span id="ya"></span></em> <p>
-        Roll:<em><%= student.roll %></em><p>
-         Class:<em><%= student.class %></em><p>
-        </div>
-          <div class="card-block">
-        <a href="/admin/students/update/<%= student._id %>"><button type="button"class="btn btn-lg btn-pill btn-teal" name="button">Update</button></a>
-                <button class="btn btn-lg btn-pill btn-teal" type="button" onclick="del()">Delete</button>
-          </div>
-        <script type="text/javascript">
-        var maj = document.getElementById('ma');
-        function del(){
-          var con=confirm('are you sure!!!');
-          if(con){
-            location.href='/admin/students/delete/<%= student._id %>';
-          }
-        }
+        <!-- Page Content -->
+        <div class="container-fluid p-y-md">
+            <div class="card card-profile">
+                <div class="card-profile-img bg-img" style="background-image: url(/assets/img/misc/base_pages_profile_header_bg.jpg);">
+                </div>
+                <div class="card-block card-profile-block text-xs-center text-sm-left">
+                    <img class="img-avatar img-avatar-96" src="/assets/img/avatars/avatar3.jpg" alt="" />
+                    <div class="profile-info font-500"> John Doe
+                        <div class="small text-muted m-t-xs">user@email.com</div>
+                    </div>
+                </div>
+            </div>
 
-         ('<%= student.major %>'=='00')? maj.innerHTML='CS': ('<%= student.major %>'=='01')?  maj.innerHTML='CT':maj.innerHTML='CST';
+            <div class="row">
 
+                <!-- .col-md-4 -->
 
-         var data = document.getElementById('ya');
-         console.log(<%= student.year %>);
-           switch ("<%= student.year %>") {
-             case "1":
-                 data.innerHTML = "First Year";
-               break;
-               case "2":
-                   data.innerHTML = "Second Year";
-                 break;
-                 case "3":
-                     data.innerHTML = "Third Year";
-                   break;
-                   case "4":
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-block tab-content">
+                            <!-- Profile tab 1 -->
+                            <div class="tab-pane fade in active">
+                                <form class="fieldset">
+                                    <h2 class="m-t-sm m-b">Student Detail...</h2>
+                                    <div class="form-group row">
+                                        <div class="col-xs-12">
+                                              Name:<em><%= student.name %></em><p>
+                                      </div>
+                                        <div class="col-xs-12">
+                                            Email:<em><%= student.email %></em><p>
+                                        </div>
+                                        <div class="col-xs-12">
+                                        Init Password:<em><%= student.password %></em><p>
+                                        </div>
+                                        <div class="col-xs-12">
+                                          Major:<em><span id="major"></span></em><p>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            Year:<em><span id="year"></span></em><p>
+                                        </div>
+                                        <div class="col-xs-12">
+                                          Roll:<em><%= student.roll %></em><p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                          Class:<em><%= student.class %></em><p>
+                                        </div>
+                                      </div>
+                                      <!-- <div class="form-group">
+                                        <label for="exampleInputAddress">Address</label>
+                                        <input type="text" class="form-control" id="exampleInputAddress" />
+                                      </div> -->
 
-                    data.innerHTML = "Fourth Year";
-                    break;
-                    case "5":
-                     data.innerHTML = "Final year";
-             default:
-             console.log("Year is not define");
-           }
+                                      <!-- <h4 class="m-t-md m-b">Change password</h4>
+                                      <div class="form-group row">
+                                        <div class="col-xs-6">
+                                            <label for="exampleInputPassword1">Confirm current password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" />
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="exampleInputPassword2">Confirm new password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2" />
+                                        </div>
+                                      </div>
+                                      <div class="form-group row">
+                                        <div class="col-xs-6">
+                                            <label for="exampleInputPassword3">New password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword3" />
+                                        </div>
+                                      </div> -->
+                                      <div class="row narrow-gutter">
+                                          <div class="col-xs-6">
+                                            <a href="/admin/students/update/<%=student._id %>"><button type="button" name="button" class="btn btn-info sbtn btn-default btn-block">Update</button></a>
+                                          </div>
+                                          <div class="col-xs-6">
+                                            <button type="button" onclick="del()" name="button" class="btn btn-primary btn btn-default btn-block">Delete</button>
 
-        </script>
+                                          </div>
+                                          <script type="text/javascript">
+                                          var data = document.getElementById('year');
+                                          console.log(<%= student.year%>);
+                                            switch ("<%= student.year %>") {
+                                              case "1":
+                                                  data.innerHTML = "First Year";
+                                                break;
+                                                case "2":
+                                                    data.innerHTML = "Second Year";
+                                                  break;
+                                                  case "3":
+                                                      data.innerHTML = "Third Year";
+                                                    break;
+                                                    case "4":
+                                                     data.innerHTML = "Fourth Year";
+                                                     case "5":
+                                                      data.innerHTML = "Final year";
+                                              default:
+                                              console.log("Year is not define");
+                                            }
+                                            var type = document.getElementById('major');
+                                            console.log('marjor',<%= student.major%>);
+                                              switch ("<%= student.major %>") {
+                                                case "00":
+                                                  type.innerHTML = "CS";
+                                                  break;
+                                                  case "01":
+                                                      type.innerHTML = "CT";
+                                                    break;
+                                                    case "10":
+                                                    type.innerHTML = "CST";
+                                                      break;
 
-        <!-- End Page Content -->
+                                                default:
+                                                console.log("Marjor is not define");
+                                              }
+                                              var maj = document.getElementById('ma');
+                                              function del(){
+                                                var con=confirm('are you sure!!!');
+                                                if(con){
+                                                  location.href='/admin/students/delete/<%= student._id %>';
+                                                }
+                                              }
 
+                                          </script>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- End profile tab 1 -->
+
+                                <!-- Profile tab 2 -->
+
+                                <!-- End profile tab 6 -->
+
+                              </div>
+                              <!-- .card-block .tab-content -->
+                              </div>
+                              <!-- .card -->
+                              </div>
+                              <!-- .col-md-8 -->
+                              </div>
+                              <!-- .row -->
+                              </div>
+                              <!-- End Page Content -->
 
       </main>
 

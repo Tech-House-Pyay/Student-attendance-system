@@ -59,6 +59,7 @@ router.get('/list',function(req,res,next){
   });
 });
 router.get('/delete/:id',function (req,res,next) {
+  console.log('call',req.params.id);
   Subject.findByIdAndRemove(req.params.id,function (err,rtn) {
     if(err) throw err;
     console.log(rtn);

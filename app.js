@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var student = require('./routes/admin/student');
 var teacher = require('./routes/admin/teacher');
 var subject = require('./routes/admin/subject');
+var attendance = require('./routes/admin/attendance');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/users', usersRouter);
 app.use('/admin/students', student);
 app.use('/admin/teachers', teacher);
 app.use('/admin/subjects', subject);
+app.use('/admin/attendances', attendance);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

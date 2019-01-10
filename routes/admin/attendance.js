@@ -8,13 +8,21 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/attendancelist',function(req,res,next){
+Attendance.find({}, function(err,rtn){
+    if(err) throw err;
+    console.log(rtn);
+  res.render('admin/attendance/atten-studentdetail');
+});
+});
 
-  router.get('/atten-detail/:id',function(req,res,next){
-  Attendace.findById(req.params.id,function(err,rtn){
-      if(err) throw err;
-      console.log(rtn);
-        res.render('admin/users/attendance/atten-detail');
-  });
-  });
+router.get('/studentdetail',function(req,res,next){
+Attendance.find({}, function(err,rtn){
+    if(err) throw err;
+    console.log(rtn);
+  res.render('admin/attendance/atten-listdetail');
+});
+});
+
 
 module.exports = router;

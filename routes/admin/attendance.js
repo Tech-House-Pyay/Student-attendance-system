@@ -16,5 +16,12 @@ router.get('/', function(req, res, next) {
         res.render('admin/users/attendance/atten-detail');
   });
   });
+  router.get('/add',function(req,res,next){
+    res.render('admin/attendance/atten-add');
+  });
+  router.post('/add',function (req,res,next) {
+    res.redirect('/admin/attendance/add');
+
+  });
 
 module.exports = router;

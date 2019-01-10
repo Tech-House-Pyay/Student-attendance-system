@@ -45,7 +45,9 @@
 
         <!-- Page Content -->
         <div class="card-block">
-        <form class="form-horizontal" action="base_forms_elements.html" method="post" enctype="multipart/form-data" onsubmit="return false;">
+          <h1 align='center' background-color:'cyan'>Attendance List</h1>
+
+        <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
 
         <div class="form-group">
           <label class="col-xs-12" for="example-select">CST</label>
@@ -72,11 +74,16 @@
             <label class="col-xs-12" for="example-select">CS</label>
             <div class="col-sm-9">
               <select class="form-control" id="example-select" name="example-select" size="1">
-                <option value="0">2CS</option>
-                <option value="1">3CS</option>
-                <option value="2">4CS</option>
-                <option value="3">5CS</option>
-              </select>
+                <option value="0">2CS-A</option>
+                <option value="1">2CS-B</option>
+                <option value="2">3CS-A<//option>
+                  <option value="3">3CS-B</option>
+                  <option value="4">4CS-A</option>
+                  <option value="5">4CS-B</option>
+                  <option value="6">5CS-A</option>
+                  <option value="7">5CS-B</option>
+
+                    </select>
             </div>
             </div>
         </form>

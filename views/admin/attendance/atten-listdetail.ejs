@@ -44,50 +44,38 @@
       <main class="app-layout-content">
 
         <!-- Page Content -->
-        <div class="card-block">
-          <h1 align='center' background-color:cyan>Attendance List</h1>
-
-        <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
-
-        <div class="form-group">
-          <label class="col-xs-12" for="example-select">CST</label>
-          <div class="col-sm-9">
-            <select class="form-control" id="example-select" name="example-select" size="1">
-              <option value="1">Class A</option>
-              <option value="2">Class B</option>
-              <option value="3">Class C</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="example-select">CT</label>
-          <div class="col-sm-9">
-            <select class="form-control" id="example-select" name="example-select" size="1">
-              <option value="A">2CT</option>
-              <option value="A">3CT</option>
-              <option value="A">4CT</option>
-              <option value="A">5CT</option>
-            </select>
-          </div>
-          </div>
-          <div class="form-group">
-            <label class="col-xs-12" for="example-select">CS</label>
-            <div class="col-sm-9">
-              <select class="form-control" id="example-select" name="example-select" size="1">
-                <option value="0">2CS-A</option>
-                <option value="1">2CS-B</option>
-                <option value="2">3CS-A<//option>
-                  <option value="3">3CS-B</option>
-                  <option value="4">4CS-A</option>
-                  <option value="5">4CS-B</option>
-                  <option value="6">5CS-A</option>
-                  <option value="7">5CS-B</option>
-
-                    </select>
-            </div>
-            </div>
-        </form>
-        </div>
+         <div class="container-fluid p-y-md">
+                         <!-- Dynamic Table Full -->
+                         <div class="card">
+                             <div class="card-header">
+                                 <h4>Attendance List Detals....</h4>
+                             </div>
+                             <div class="card-block">
+                                 <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+                                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                     <thead>
+                                         <tr>
+                                             <th>Name</th>
+                                             <th>English</th>
+                                             <th>Distributed System</th>
+                                             <th>Data Mining</th>
+                                             <th>Operation Research</th>
+                                             <th>Infromation Assurance and Security</th>
+                                             <th>ERP</th>
+                                             <th>AI</th>
+                                             <th>Total</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                           <td><a href="/admin/attendances/studentdetail">Ma Ma</a></td>
+                                           <td></td>
+                                           <td></td>
+                                           <td></td>
+                                         </tr>
+                                        </tbody>
+                                  </table>
+                              </div>
         <!-- End Page Content -->
 
       </main>

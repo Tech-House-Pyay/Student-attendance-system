@@ -11,8 +11,8 @@ var student = require('./routes/admin/student');
 var teacher = require('./routes/admin/teacher');
 var subject = require('./routes/admin/subject');
 var attendance = require('./routes/admin/attendance');
-var teacher = require('./routes/users/teacher');
-var student = require('./routes/users/student');
+var teacherU = require('./routes/users/teacher');
+var studentU = require('./routes/users/student');
 
 var app = express();
 
@@ -37,8 +37,8 @@ app.use('/admin/students', student);
 app.use('/admin/teachers', teacher);
 app.use('/admin/subjects', subject);
 app.use('/admin/attendances', attendance);
-app.use('/user/teachers', teacher);
-app.use('/user/students', student);
+app.use('/user/teachers', teacherU);
+app.use('/user/students', studentU);
 
 
 // catch 404 and forward to error handler

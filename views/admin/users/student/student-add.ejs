@@ -13,28 +13,9 @@
     <div class="app-layout-container">
 
       <!-- Drawer -->
-      <aside class="app-layout-drawer">
 
-        <!-- Drawer scroll area -->
-        <div class="app-layout-drawer-scroll">
-          <!-- Drawer logo -->
-          <div id="logo" class="drawer-header">
-            <a href="index.html"><img class="img-responsive" src="assets/img/logo/logo-backend.png" title="AppUI" alt="AppUI" /></a>
-          </div>
-
-          <!-- Drawer navigation -->
-          <nav class="drawer-main">
             <% include ../../../partial/nav-drawer %>
-          </nav>
-          <!-- End drawer navigation -->
-
-          <div class="drawer-footer">
-            <p class="copyright">AppUI Template &copy;</p>
-            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
-          </div>
-        </div>
-        <!-- End drawer scroll area -->
-      </aside>
+          
       <!-- End drawer -->
 
       <!-- Header -->
@@ -46,92 +27,94 @@
         <!-- Page Content -->
         <div class="container-fluid p-y-md">
 
-                      <!-- Registration forms -->
-                      <div class="row">
-                          <div class="col-lg-4">
-                              <!-- Bootstrap registration -->
-                              <div class="card">
-                                  <div class="card-header bg-green bg-inverse">
-                                      <h4>Hello Wellcome To<p><br>
-                                        <em>Student  Add!!</em> </h4>
-                                  <div class="card-block">
-                                      <form class="form-horizontal" action="/admin/students/add" method="post">
-                                          <div class="form-group">
-                                              <label class="col-xs-12" for="register1-username">Name:</label>
-                                              <div class="col-xs-12">
-                                                  <input class="form-control" type="text" id="register1-username" name="stuname" placeholder="Enter username..." />
-                                              </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="col-xs-12" for="register1-email">Email:</label>
-                                              <div class="col-xs-12">
-                                                  <input class="form-control" type="email" id="register1-email" name="stuemail" placeholder="Enter email..." />
-                                              </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="col-xs-12" for="register1-password">Init Password:</label>
-                                              <div class="col-xs-12">
-                                                  <input class="form-control" type="password" id="register1-password" name="stupwd" placeholder="Enter password..." />
-                                              </div>
-                                          </div>
-                        <div class="form-group">
-                          <div class="col-xs-12">
-                              <div class="form-material floating">
-                          <label for="major">Major:</label>
-                          <select class="form-control" id="major" name="stumajor">
-                            <option value="00">Computer Science</option>
-                            <option value="01">Computer Technology</option>
-                            <option value="10">Computer Science and Technology</option>
-                          </select><p>
+          <!-- Registration forms -->
+          <div class="row">
+            <div class="col-lg-4">
+              <!-- Bootstrap registration -->
+              <div class="card">
+                <div class="card-header bg-green bg-inverse">
+                  <h4>Hello Wellcome To<p><br>
+                      <em>Student Add!!</em> </h4>
+                  <div class="card-block">
+                    <form class="form-horizontal" action="/admin/students/add" method="post">
+                      <div class="form-group">
+                        <label class="col-xs-12" for="register1-username">Name:</label>
+                        <div class="col-xs-12">
+                          <input class="form-control" type="text" id="register1-username" name="stuname" placeholder="Enter username..." />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-12" for="register1-email">Email:</label>
+                        <div class="col-xs-12">
+                          <input class="form-control" type="email" id="register1-email" name="stuemail" placeholder="Enter email..." />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-xs-12" for="register1-password">Init Password:</label>
+                        <div class="col-xs-12">
+                          <input class="form-control" type="password" id="register1-password" name="stupwd" placeholder="Enter password..." />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="form-material floating">
+                            <label for="major">Major:</label>
+                            <select class="form-control" id="major" name="stumajor">
+                              <option value="00">Computer Science</option>
+                              <option value="01">Computer Technology</option>
+                              <option value="10">Computer Science and Technology</option>
+                            </select>
+                            <p>
                           </div>
                         </div>
                       </div>
-                          <div class="form-group">
-                            <div class="col-xs-12">
-                                <div class="form-material floating">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="form-material floating">
                             <label for="year"> Year:</label>
                             <select class="form-control" id="year" name="stuyear">
                               <option value="1">First Year</option>
                               <option value="2">Second Year</option>
                               <option value="3">Third Year</option>
                               <option value="4">Fourth Year</option>
-                              <option value="5">fifth Year</option><
-                            </select><p>
+                              <option value="5">fifth Year</option>
+                              < </select> <p>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-xs-12" for="register1-username">Roll:</label>
-                          <div class="col-xs-12">
-                              <input class="form-control" type="text" id="register1-username" name="sturoll" placeholder="Enter username..." />
-                          </div>
+                        <label class="col-xs-12" for="register1-username">Roll:</label>
+                        <div class="col-xs-12">
+                          <input class="form-control" type="text" id="register1-username" name="sturoll" placeholder="Enter username..." />
+                        </div>
                       </div>
-                          <div class="form-group">
-                            <div class="col-xs-12">
-                               <div class="form-material floating">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="form-material floating">
                             <label for="stuclass">Class:</label>
                             <select class="form-control" id="stuclass" name="stuclass">
                               <option value="section A">Section A</option>
                               <option value="section B">Section B</option>
                               <option value="section C">Section C</option>
-                            </select><p>
+                            </select>
+                            <p>
                           </div>
                         </div>
                       </div>
                       <div class="card-block">
-                          <p>
-                              <button class="btn btn-lg btn-teal btn-pill" type="submit">Submit</button>
-                          </p>
-                        </div>
+                        <p>
+                          <button class="btn btn-lg btn btn-app-orange btn-pill" type="submit">Submit</button>
+                        </p>
+                      </div>
                     </form>
                   </div>
-                    <!-- .card-block -->
-                     </div>
-                     <!-- .card -->
-                     <!-- End Material registration -->
-                   </div>
-                     <!-- .col-lg-4 -->
-        <!-- End Page Content -->
+                  <!-- .card-block -->
+                </div>
+                <!-- .card -->
+                <!-- End Material registration -->
+              </div>
+              <!-- .col-lg-4 -->
+              <!-- End Page Content -->
 
       </main>
 

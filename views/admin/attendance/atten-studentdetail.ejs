@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="app-ui">
+
+<head>
+  <!-- Meta -->
+  <% include ../../partial/head %>
+  <!-- End Stylesheets -->
+</head>
+
+<body class="app-ui layout-has-drawer layout-has-fixed-header">
+  <div class="app-layout-canvas">
+    <div class="app-layout-container">
+
+      <!-- Drawer -->
+
+            <% include ../../partial/nav-drawer %>
+        
+      <!-- End drawer -->
+
+      <!-- Header -->
+      <% include ../../partial/header %>
+      <!-- End header -->
+
+      <main class="app-layout-content">
+
+        <!-- Page Content -->
+        <div class="container-fluid p-y-md">
+                       <!-- Dynamic Table Full -->
+                       <div class="card">
+                           <div class="card-header">
+                               <h4>Dynamic Table - Full</h4>
+                           </div>
+                           <div class="card-block">
+                               <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+                               <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                   <thead>
+                                       <th></th>
+                                          <th>1</th>
+                                          <th>2</th>
+                                          <th>3</th>
+                                          <th>4</th>
+                                          <th>5</th>
+                                          <th>6</th>
+                                          <th>7</th>
+                                          <th>8</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                       <tr>
+                                         <td><a href="/admin/attendances/attendancelist">Ma Ma</a></td>
+                                       </tr>
+                                     </tbody>
+                                     <tbody>
+                                       <tr>
+                                         <td>English</td>
+                                         <tbody>
+                                         <tr>
+                                         <td>Distributed System</td>
+                                       </tr>
+                                     </tbody>
+                                       <tbody>
+                                         <tr>
+                                            <td>Data Mining</td>
+                                         </tr>
+                                       </tbody>
+                                         <tbody>
+                                         <tr>
+                                         <td>Operation Research</td>
+                                       </tr>
+                                     </tbody>
+                                       <tbody>
+                                         <tr>
+                                         <td>Infromation Assurance and Security</td>
+                                       </tr>
+                                     </tbody>
+                                       <tbody>
+                                         <tr>
+                                           <td>Total</td>
+                                       </tr>
+                                      </tbody>
+                                </table>
+                            </div>
+        <!-- End Page Content -->
+
+      </main>
+
+    </div>
+    <!-- .app-layout-container -->
+  </div>
+  <!-- .app-layout-canvas -->
+
+  <!-- Apps Modal -->
+  <!-- Opens from the button in the header -->
+  <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-sm modal-dialog modal-dialog-top">
+      <div class="modal-content">
+        <!-- Apps card -->
+        <div class="card m-b-0">
+          <div class="card-header bg-app bg-inverse">
+            <h4>Apps</h4>
+            <ul class="card-actions">
+              <li>
+                <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
+              </li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <div class="row text-center">
+              <div class="col-xs-6">
+                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
+                  <i class="ion-speedometer fa-4x"></i>
+                  <p>Admin</p>
+                </a>
+              </div>
+              <div class="col-xs-6">
+                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
+                  <i class="ion-laptop fa-4x"></i>
+                  <p>Frontend</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- .card-block -->
+        </div>
+        <!-- End Apps card -->
+      </div>
+    </div>
+  </div>
+  <!-- End Apps Modal -->
+
+  <div class="app-ui-mask-modal"></div>
+
+  <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
+  <% include ../../partial/script %>
+
+</body>
+
+</html>

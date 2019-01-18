@@ -10,7 +10,10 @@ var usersRouter = require('./routes/users');
 var student = require('./routes/admin/student');
 var teacher = require('./routes/admin/teacher');
 var subject = require('./routes/admin/subject');
-var timetable =require('./routes/admin/timetable');
+var attendance = require('./routes/admin/attendance');
+var teacherU = require('./routes/users/teacher');
+var studentU = require('./routes/users/student');
+
 var app = express();
 
 mongoose.connect('mongodb://127.0.0.1/sasdb')
@@ -33,7 +36,11 @@ app.use('/users', usersRouter);
 app.use('/admin/students', student);
 app.use('/admin/teachers', teacher);
 app.use('/admin/subjects', subject);
-app.use('/admin/timetables', timetable);
+app.use('/admin/attendances', attendance);
+app.use('/user/teachers', teacherU);
+app.use('/user/students', studentU);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

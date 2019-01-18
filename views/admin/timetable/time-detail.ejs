@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Timetable Detail...</h1>
+    teacher_Name:<%= timetable.teacher_id %><p>
+      Subject_Name:<%= timetable.subname %><p>
+        Class:<span id="class"></span><p>
+          Time:<%= timetable.time %><p>
+            Day:<span id="day"></span><p>
+              <a href="/admin/timetables/update/<%=teacher._id %>"><button type="button" name="button">Update</button></a>
+              <button type="button" onclick="del()" name="button">Delete</button>
+  </body>
+  <script type="text/javascript">
+    var cl = document.getElementById('class');
+    switch ("<%= timetable.class %>") {
+      case "1csta":
+        cl.innerHTML= "1CST A";
+        break;
+      case "1cstb":
+        cl.innerHTML= "1CST B";
+        break;
+      case "1cstc":
+        cl.innerHTML= "1CST C";
+        break;
+      case "2csa":
+        cl.innerHTML= "2CS A";
+        break;
+      case "2csb":
+        cl.innerHTML= "2CS B";
+        break;
+      case "2ct":
+        cl.innerHTML= "2CT";
+        break;
+        case "3csa":
+          cl.innerHTML= "3CS A";
+          break;
+        case "3csb":
+          cl.innerHTML= "3CS B";
+          break;
+        case "3ct":
+          cl.innerHTML= "3CT";
+          break;
+          case "4csa":
+            cl.innerHTML= "4CS A";
+            break;
+          case "4csb":
+            cl.innerHTML= "4CS B";
+            break;
+          case "4ct":
+            cl.innerHTML= "4CT";
+            break;
+            case "5csa":
+              cl.innerHTML= "5CS A";
+              break;
+            case "5csb":
+              cl.innerHTML= "5CS B";
+              break;
+            case "5ct":
+              cl.innerHTML= "5CT";
+              break;
+
+      default:
+      console.log("Please enter your class");
+
+    }
+    function del() {
+      var co=confirm('Are yor sure!!?');
+
+    if(co)
+    location.href="/admin/timetables/delete/<%=teacher._id %>";
+  }
+  </script>
+</html>

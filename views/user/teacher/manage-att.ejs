@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="app-ui">
+
+    <head>
+        <!-- Meta -->
+        <% include ../../partial/head %>
+        <!-- End Stylesheets -->
+    </head>
+
+    <body class="app-ui">
+        <div class="app-layout-canvas">
+            <div class="app-layout-container">
+
+                <!-- Header -->
+                <header class="app-layout-header">
+                    <nav class="navbar navbar-default p-y">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                                <% include ../../partial/user-header %>
+
+                <main class="app-layout-content">
+
+                    <!-- Page header -->
+                    <div class="page-header bg-app bg-inverse">
+                        <div class="container">
+                            <!-- Section Content -->
+                            <div class="p-y-lg text-center">
+                                <h1 class="display-2">Management Attendance</h1>
+
+                                <!-- Search form -->
+                                <!-- <div class="row m-t">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <form action="frontend_search.html" method="post">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" placeholder="Search support.." />
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-default"><i class="ion-ios-search-strong"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> -->
+                                <!-- End search form -->
+                            </div>
+                            <!-- End Section Content -->
+                        </div>
+                    </div>
+                    <!-- End Page header -->
+
+                    <!-- Categories -->
+                    <div class="page-content bg-white">
+                        <div class="container">
+                    <% include ../../partial/user-submenuT %>
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <!-- Introduction -->
+                            <h2 class="h3 m-t-lg m-b">Management Attendance</h2>
+                            <!-- Classic table -->
+                            <div class="col-lg-12 col-lg-3">
+                                <a href="/users/teachers/calling"><div class="card">
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>JavaScript</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>2 CS A</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+                                <a href="/users/teachers/calling"><div class="card">
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Digital</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>3 CS A</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+                                <a href="/users/teachers/calling"><div class="card">
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Database</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>2 CS B</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <!-- .card -->
+                            <!-- End Classic table -->
+                            <!-- End Introduction -->
+
+
+
+                            <!-- Payments -->
+
+                        </div>
+                    </div>
+                    <!-- End Section Content -->
+                </div>
+            </div>
+                    <!-- End Categories -->
+
+                </main>
+
+                <footer class="app-layout-footer">
+                    <div class="container p-y-md">
+                        <div class="pull-right hidden-sm hidden-xs">
+                            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                        </div>
+                        <div class="pull-left text-center text-md-left">
+                            AppUI &copy; <span class="js-year-copy"></span>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- .app-layout-container -->
+        </div>
+        <!-- .app-layout-canvas -->
+
+        <!-- Apps Modal -->
+        <!-- Opens from the button in the header -->
+
+        <!-- End Apps Modal -->
+
+        <% include ../../partial/script %>
+
+    </body>
+
+</html>

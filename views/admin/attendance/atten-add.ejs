@@ -14,7 +14,7 @@
 
       <!-- Drawer -->
 
-            <% include ../../partial/nav-drawer %>
+      <% include ../../partial/nav-drawer %>
 
       <!-- End drawer -->
 
@@ -28,47 +28,53 @@
         <div class="card-block">
           <h1 align='center' background-color:cyan>Attendance List</h1>
 
-        <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
+          <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
 
-        <div class="form-group">
-          <label class="col-xs-12" for="example-select">CST</label>
-          <div class="col-sm-9">
-            <select class="form-control" id="example-select" name="example-select" size="1">
-              <option value="1">Class A</option>
-              <option value="2">Class B</option>
-              <option value="3">Class C</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="example-select">CT</label>
-          <div class="col-sm-9">
-            <select class="form-control" id="example-select" name="example-select" size="1">
-              <option value="A">2CT</option>
-              <option value="A">3CT</option>
-              <option value="A">4CT</option>
-              <option value="A">5CT</option>
-            </select>
-          </div>
-          </div>
-          <div class="form-group">
-            <label class="col-xs-12" for="example-select">CS</label>
-            <div class="col-sm-9">
-              <select class="form-control" id="example-select" name="example-select" size="1">
-                <option value="0">2CS-A</option>
-                <option value="1">2CS-B</option>
-                <option value="2">3CS-A<//option>
-                  <option value="3">3CS-B</option>
+            <div class="form-group">
+              <label class="col-xs-12" for="example-select">CST</label>
+              <div class="col-sm-9">
+                <select class="form-control" id="example-select" name="example-select" size="1">
+                  <option value="1">Class A</option>
+                  <option value="2">Class B</option>
+                  <option value="3">Class C</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12" for="example-select">CT</label>
+              <div class="col-sm-9">
+                <select class="form-control" id="example-select" name="example-select" size="1">
+                  <option value="A">2CT</option>
+                  <option value="A">3CT</option>
+                  <option value="A">4CT</option>
+                  <option value="A">5CT</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-12" for="example-select">CS</label>
+              <div class="col-sm-9">
+                <select class="form-control" id="example-select" name="example-select" size="1">
+                  <option value="0">2CS-A</option>
+                  <option value="1">2CS-B</option>
+                  <option value="2">3CS-A<//option> <option value="3">3CS-B</option>
                   <option value="4">4CS-A</option>
                   <option value="5">4CS-B</option>
                   <option value="6">5CS-A</option>
                   <option value="7">5CS-B</option>
 
-                    </select>
+                </select>
+              </div>
             </div>
-            </div>
-        </form>
+          </form>
         </div>
+        <div class="col-lg-6 mt-5">
+          <div class="card">
+            <div class="card-body">
+
+
+              <button type="button" class="btn btn-rounded btn-warning mb-3">Go To Details</button>
+            </div></div></div>
         <!-- End Page Content -->
 
       </main>
@@ -80,33 +86,7 @@
 
   <!-- Apps Modal -->
   <!-- Opens from the button in the header -->
-  <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-sm modal-dialog modal-dialog-top">
-      <div class="modal-content">
-        <!-- Apps card -->
-        <div class="card m-b-0">
-          <div class="card-header bg-app bg-inverse">
-            <h4>Apps</h4>
-            <ul class="card-actions">
-              <li>
-                <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
-              </li>
-            </ul>
-          </div>
-          <div class="card-block">
-            <div class="row text-center">
-              <div class="col-xs-6">
-                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
-                  <i class="ion-speedometer fa-4x"></i>
-                  <p>Admin</p>
-                </a>
-              </div>
-              <div class="col-xs-6">
-                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
-                  <i class="ion-laptop fa-4x"></i>
-                  <p>Frontend</p>
-                </a>
-              </div>
+  
             </div>
           </div>
           <!-- .card-block -->
@@ -115,12 +95,13 @@
       </div>
     </div>
   </div>
-  <!-- End Apps Modal -->
 
-  <div class="app-ui-mask-modal"></div>
+      <!-- End Apps Modal -->
 
-  <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
-  <% include ../../partial/script %>
+      <div class="app-ui-mask-modal"></div>
+
+      <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
+      <% include ../../partial/script %>
 
 </body>
 

@@ -32,13 +32,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 app.use('/admin/students', student);
 app.use('/admin/teachers', teacher);
 app.use('/admin/subjects', subject);
 app.use('/admin/attendances', attendance);
-app.use('/user/teachers', teacherU);
-app.use('/user/students', studentU);
+app.use('/users/teachers', teacherU);
+app.use('/users/students', studentU);
 
 
 // catch 404 and forward to error handler

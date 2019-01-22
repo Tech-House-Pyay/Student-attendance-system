@@ -6,6 +6,7 @@
         <!-- Meta -->
         <% include ../../partial/head %>
         <!-- End Stylesheets -->
+        <link rel="stylesheet" href="/stylesheets/jquery.dataTables.min.css">
     </head>
 
     <body class="app-ui">
@@ -18,11 +19,11 @@
                         <div class="container">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+                        				<span class="sr-only">Toggle navigation</span>
+                        					<span class="icon-bar"></span>
+                        					<span class="icon-bar"></span>
+                        					<span class="icon-bar"></span>
+                        				</button>
                                 <% include ../../partial/user-header %>
 
                 <main class="app-layout-content">
@@ -32,7 +33,7 @@
                         <div class="container">
                             <!-- Section Content -->
                             <div class="p-y-lg text-center">
-                                <h1 class="display-2">Management Attendance</h1>
+                                <h1 class="display-2">Call Attendance</h1>
 
                                 <!-- Search form -->
                                 <!-- <div class="row m-t">
@@ -57,56 +58,65 @@
                     <!-- Categories -->
                     <div class="page-content bg-white">
                         <div class="container">
-                    <% include ../../partial/user-submenuT %>
                     <div class="row">
                         <div class="col-sm-10 col-sm-offset-1">
                             <!-- Introduction -->
-                            <h2 class="h3 m-t-lg m-b">Management Attendance</h2>
+                            <h2 class="h3 m-t-lg m-b">Call Attendance</h2>
                             <!-- Classic table -->
                             <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/manage"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>JavaScript</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>2 CS A</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/manage"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>Digital</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>3 CS A</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/manage"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>Database</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>2 CS B</p>
-                                    </div>
-                                </div></a>
+                              <table id="example" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Roll No</th>
+                                        <th>Attendance/Absent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr>
+                                        <td>Mg Mg</td>
+                                        <td>1</td>
+                                        <td><input type="checkbox" id="roll1" name="roll" value="123"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Aung Aung</td>
+                                        <td>2</td>
+                                        <td><input type="checkbox" id="roll2" name="roll" value="456" ></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Ko Ko</td>
+                                        <td>3</td>
+                                        <td><input type="checkbox" id="roll3" name="roll" value="789"></td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Bo Bo</td>
+                                        <td>4</td>
+                                        <td><input type="checkbox" id="roll4" name="roll" value="012"></td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Phyo Phyo</td>
+                                        <td>5</td>
+                                        <td><input type="checkbox" id="roll5" name="roll" value="1357"></td>
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>RollNo</th>
+                                        <th>Attendance/Absent</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
                             </div>
                             <!-- .card -->
                             <!-- End Classic table -->
@@ -115,7 +125,7 @@
 
 
                             <!-- Payments -->
-
+                          <button type="button" class="btn btn-app-green" id="button" name="button">Submit</button>
                         </div>
                     </div>
                     <!-- End Section Content -->
@@ -149,5 +159,28 @@
         <% include ../../partial/script %>
 
     </body>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" charset="utf-8"></script> -->
+    <script src="/javascripts/jquery.dataTables.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+          var table = $('#example').DataTable();
+
+          $('button').click( function() {
+            console.log('click');
+              var data = table.$('input').serialize();
+              var record = {attendance: data}
+              $.ajax({
+                  "url": "/users/teachers/calling",
+                  "type": "POST",
+                  // "dataType": "jsonp",
+                  "data" : record
+              })
+              // return false;
+          } );
+        } );
+
+    </script>
 
 </html>

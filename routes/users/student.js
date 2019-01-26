@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
+  console.log(req.session.users);
   res.render('user/student/home', { title: 'Express' });
 });
 router.get('/timeTab', function(req, res, next) {

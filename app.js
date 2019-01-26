@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var admin = require('./routes/admin');
 var student = require('./routes/admin/student');
 var teacher = require('./routes/admin/teacher');
 var subject = require('./routes/admin/subject');
@@ -21,6 +23,17 @@ mongoose.connect('mongodb://127.0.0.1/sasdb')
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'MongoDB connection error:'));
 
+app.use(session({
+      secret: '@$TuD@ntA&tte!#$%^&09,',// any string for security
+      resave: false,
+      saveUninitialized : true
+}));
+
+app.use(function (req,res,next) {
+  res.locals.user = req.session.user;
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -32,6 +45,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/admin', admin);
 app.use('/users', usersRouter);
 app.use('/admin/students', student);
 app.use('/admin/teachers', teacher);

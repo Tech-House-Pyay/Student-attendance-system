@@ -7494,7 +7494,7 @@ h1, h2, h3, h4, h5, h6,
 	text-transform: none;
 }
 
-.bg-inverse h1, .bg-inverse h2, .bg-inverse h3, .bg-inverse h4, .bg-inverse h5, .bg-inverse h6, .bg-inverse
+.bg-inverse h1, .bg-inverse h2, .bg-inverse h3,  .bg-inverse h5, .bg-inverse h6, .bg-inverse
 .h1, .bg-inverse .h2, .bg-inverse .h3, .bg-inverse .h4, .bg-inverse .h5, .bg-inverse .h6 {
 	color: #fff;
 }

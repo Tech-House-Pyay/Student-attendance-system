@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="app-ui">
+
+    <head>
+        <!-- Meta -->
+        <% include ../partial/head %>
+        <!-- End Stylesheets -->
+    </head>
+
+    <body class="app-ui">
+        <div class="app-layout-canvas">
+            <div class="app-layout-container">
+
+                <!-- Header -->
+                <header class="app-layout-header">
+                    <nav class="navbar navbar-default p-y">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                                <% include ../partial/user-header %>
+
+                <main class="app-layout-content">
+
+                    <!-- Page header -->
+                    <div class="page-header bg-green bg-inverse">
+                        <div class="container">
+                            <!-- Section Content -->
+                            <div class="p-y-lg text-center">
+                                <h1 class="display-2">Admin Signup</h1>
+                                <p class="text-muted">Unlimited ideas. Unlimited power. Unlimited joy. Unlimited opportunities.</p>
+                            </div>
+                            <!-- End Section Content -->
+                        </div>
+                    </div>
+                    <!-- End Page header -->
+
+                    <!-- Page content -->
+                    <div class="page-content">
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-md-2">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card">
+                                    <h3 class="card-header h4">Sign up</h3>
+                                    <div class="card-block">
+                                        <form class="form-horizontal" name="frm" action="/signup" method="post">
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="sr-only" for="frontend_signup_username">Username</label>
+                                                    <input class="form-control" name="name" type="text" id="frontend_signup_username" placeholder="Username" required/>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="sr-only" for="frontend_signup_email">Email</label>
+                                                    <input class="form-control" name="email" type="email" id="frontend_signup_email" placeholder="Email" required/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="sr-only" for="frontend_signup_password">Password</label>
+                                                    <input class="form-control" name="password" type="password" id="frontend_signup_password" placeholder="Password" required/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label class="sr-only" for="key">Security Key</label>
+                                                    <input class="form-control" type="password" id="key" placeholder="Enter Security Key" />
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-app btn-block" id="btn" type="button">Sign Up</button>
+                                        </form>
+                                    </div>
+                                    <!-- .card-block -->
+                                </div>
+                                </div>
+                                <!-- .col-md-6 -->
+                                <!-- End login -->
+
+
+                                <!-- .col-md-6 -->
+                                <!-- End sign up -->
+
+                            </div>
+                            <!-- .row -->
+                        </div>
+                        <!-- .container -->
+                    </div>
+                    <!-- End page content -->
+
+                    <!-- Modal -->
+
+                    <!-- End modal -->
+
+                </main>
+
+                <footer class="app-layout-footer">
+                    <div class="container p-y-md">
+                        <div class="pull-right hidden-sm hidden-xs">
+                            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                        </div>
+                        <div class="pull-left text-center text-md-left">
+                            AppUI &copy; <span class="js-year-copy"></span>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- .app-layout-container -->
+        </div>
+        <!-- .app-layout-canvas -->
+
+        <!-- Apps Modal -->
+        <!-- Opens from the button in the header -->
+
+
+        <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
+        <% include ../partial/script %>
+
+    </body>
+    <script type="text/javascript">
+      $('#btn').click(function () {
+        if($('#key').val() == "<%=key%>"){
+          frm.submit();
+        }else {
+          alert('worng security key')
+        }
+      })
+    </script>
+
+</html>

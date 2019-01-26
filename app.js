@@ -7,14 +7,8 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var admin = require('./routes/admin');
-var student = require('./routes/admin/student');
-var teacher = require('./routes/admin/teacher');
-var subject = require('./routes/admin/subject');
-var attendance = require('./routes/admin/attendance');
-var teacherU = require('./routes/users/teacher');
-var studentU = require('./routes/users/student');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -45,15 +39,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use(function(req, res, next){
+  if(req.session.users){
+    next();
+  }else {
+    res.redirect('/');// redirect to other page
+  }
+});
 app.use('/admin', admin);
-app.use('/users', usersRouter);
-app.use('/admin/students', student);
-app.use('/admin/teachers', teacher);
-app.use('/admin/subjects', subject);
-app.use('/admin/attendances', attendance);
-app.use('/users/teachers', teacherU);
-app.use('/users/students', studentU);
-
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

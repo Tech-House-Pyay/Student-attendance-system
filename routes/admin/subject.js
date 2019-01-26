@@ -10,8 +10,10 @@ router.get('/add',function(req,res,next){
   Teacher.find({},function(err,rtn){
     if(err) throw err;
   res.render('admin/subject/subj-add',{ teacher:rtn});
-    })
+ });
 });
+
+
 router.post('/add',function(req,res,next){
   console.log('call',req.body.teacher);
   var subject=new Subject();

@@ -27,9 +27,7 @@
         <!-- Page Content -->
         <div class="card-block">
           <h1 align='center' background-color:cyan>Attendance List</h1>
-
-          <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
-
+          <form class="form-horizontal" action="/admin/attendances/add" method="get" enctype="multipart/form-data" onsubmit="return false;">
             <div class="form-group">
               <label for="class">Class:</label>
               <select class="form-control" id="class" name="class">
@@ -55,7 +53,7 @@
         <div class="col-lg-6 mt-5">
           <div class="card">
             <div class="card-block">
-              <button type="button" class="btn btn-rounded btn-warning mb-3"><a href="/admin/attendences/studentdetail">Go To Details</a></button>
+              <button type="button" class="btn btn-rounded btn-warning mb-3"><a href="/admin/attendances/studentdetail">Go To Details</a></button>
             </div>
           </div>
         </div>

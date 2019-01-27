@@ -31,50 +31,34 @@
           <form class="form-horizontal" action="/admin/attendances/add" method="post" enctype="multipart/form-data" onsubmit="return false;">
 
             <div class="form-group">
-              <label class="col-xs-12" for="example-select">CST</label>
-              <div class="col-sm-9">
-                <select class="form-control" id="example-select" name="example-select" size="1">
-                  <option value="1"><a href=""></a>Class A</option>
-                  <option value="2"><a href="#"></a>Class B</option>
-                  <option value="3"><a href="#"></a>Class C</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-xs-12" for="example-select">CT</label>
-              <div class="col-sm-9">
-                <select class="form-control" id="example-select" name="example-select" size="1">
-                  <option value="A"><a href="#"></a>2CT</option>
-                  <option value="A"><a href="#"></a>3CT</option>
-                  <option value="A"><a href="#"></a>4CT</option>
-                  <option value="A"><a href="#"></a>5CT</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-xs-12" for="example-select">CS</label>
-              <div class="col-sm-9">
-                <select class="form-control" id="example-select" name="example-select" size="1">
-                  <option value="0"><a href="#"></a>2CS-A</option>
-                  <option value="1"><a href="#"></a>2CS-B</option>
-                  <option value="2"><a href="#"></a>3CS-A<//option> <option value="3">3CS-B</option>
-                  <option value="4"><a href="#"></a>4CS-A</option>
-                  <option value="5"><a href="#"></a>4CS-B</option>
-                  <option value="6"><a href="#"></a>5CS-A</option>
-                  <option value="7"><a href="#"></a>5CS-B</option>
-
-                </select>
-              </div>
+              <label for="class">Class:</label>
+              <select class="form-control" id="class" name="class">
+                <option value="1csta">1CST A</option>
+                <option value="1cstb">1CST B</option>
+                <option value="1cstc">1CST C</option>
+                <option value="2csa">2CS A</option>
+                <option value="2csb">2CS B</option>
+                <option value="2ct">2CT</option>
+                <option value="3csa">3CS A</option>
+                <option value="3csb">3CS B</option>
+                <option value="3ct">3CT</option>
+                <option value="4csa">4CS A</option>
+                <option value="4csb">4CS B</option>
+                <option value="4ct">4CT</option>
+                <option value="5csa">5CS A</option>
+                <option value="5csb">5CS B</option>
+                <option value="5ct">5CT</option>
+              </select>
             </div>
           </form>
         </div>
         <div class="col-lg-6 mt-5">
           <div class="card">
-            <div class="card-body">
-
-
-              <button type="button" class="btn btn-rounded btn-warning mb-3"><a href="/admin/attendences/studentdetail/"></a>Go To Details</button>
-            </div></div></div>
+            <div class="card-block">
+              <button type="button" class="btn btn-rounded btn-warning mb-3"><a href="/admin/attendences/studentdetail">Go To Details</a></button>
+            </div>
+          </div>
+        </div>
         <!-- End Page Content -->
 
       </main>

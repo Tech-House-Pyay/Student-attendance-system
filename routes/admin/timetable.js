@@ -7,11 +7,8 @@ router.get('/', function(req, res, next) {
       res.render('index', { title: 'Express' });
 });
 router.get('/add',function(req,res,next){
-
   res.render('admin/timetable/time-add',{ title: 'Express'});
  });
-
-
 
 router.post('/add',function(req,res,next){
 var timetable=new Timetable();
@@ -24,7 +21,6 @@ timetable.save(function(err,rtn){
     if (err)throw err;
     res.redirect('/admin/timetables/time-detail/'+rtn._id);
   });
-
 });
 router.get('/list',function(req,res,next){
   Timetable.find({},function(err,rtn){

@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var Teacher = require('../../model/Teacher');
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('user/teacher/home', { title: 'Express' });
+  Teacher.findOne({email:req.session.users.email},function (err,rtn) {
+    if(err) throw err;
+    res.render('user/teacher/home', { title: 'Express' , user: rtn});
+  });
 });
 
 router.get('/timeTab', function(req, res, next) {

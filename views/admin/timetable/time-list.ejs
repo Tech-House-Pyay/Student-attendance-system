@@ -1,29 +1,219 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Timetables List...</h1>
-    <form class="" action="index.html" method="post">
-      <div class="form-group">
-        <label for="class">Select Class: </label>
-        <select class="form-group" id="class" name="class">
 
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
-          <option value="">4</option>
-          <option value="">5</option>
-          <select class="form-group" id="class" name="class1">
-            <option value="">CST</option>
-            <option value="">CS</option>
-            <option value="">CT</option>
+<html class="app-ui">
 
-          </select>
-        </select>
-      </div>
-    </form>
-  </body>
+    <head>
+        <!-- Meta -->
+        <% include ../../partial/head %>
+        <!-- End Stylesheets -->
+    </head>
+
+    <body class="app-ui">
+        <div class="app-layout-canvas">
+            <div class="app-layout-container">
+
+                <!-- Header -->
+                <header class="app-layout-header">
+                    <nav class="navbar navbar-default p-y">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                                <% include ../../partial/user-header %>
+
+                <main class="app-layout-content">
+
+                    <!-- Page header -->
+                    <div class="page-header bg-app bg-inverse">
+                        <div class="container">
+                            <!-- Section Content -->
+                            <div class="p-y-lg text-center">
+                                <h1 class="display-2">Time_Table</h1>
+
+                                <!-- Search form -->
+                                <!-- <div class="row m-t">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <form action="frontend_search.html" method="post">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" placeholder="Search support.." />
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-default"><i class="ion-ios-search-strong"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> -->
+                                <!-- End search form -->
+                            </div>
+                            <!-- End Section Content -->
+                        </div>
+                    </div>
+                    <!-- End Page header -->
+
+                    <!-- Categories -->
+                    <div class="page-content bg-white">
+                        <div class="container">
+                    <% include ../../partial/user-submenuT %>
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <!-- Introduction -->
+                            <h2 class="h3 m-t-lg m-b">Time_Table List!!</h2>
+                            <!-- Classic table -->
+                            <div class="col-lg-12 col-lg-3">
+
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>First Year</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="/admin/timetables/time-detail"><div class="card">
+                                    <div class="card-block">
+                                        <p>1CST A</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>1CST B</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>1CST C</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Second Year</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="/admin/timetables/time-detail"><div class="card">
+                                    <div class="card-block">
+                                        <p>2CS A</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>2CS B</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>2CT </p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Third Year</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="/admin/timetables/time-detail"><div class="card">
+                                    <div class="card-block">
+                                        <p>3CS A</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>3CS B</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>3CST</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Fourth Year</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                      <a href="/admin/timetables/time-detail"><div class="card">
+                                    <div class="card-block">
+                                        <p>4CS A</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>4CS B</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>4CST</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div class="col-lg-12 col-lg-3">
+
+                                    <div class="card-header bg-green bg-inverse">
+                                        <h4>Fifth Year</h4>
+                                        <ul class="card-actions">
+                                            <li>
+                                                <button type="button"><i class="ion-bookmark"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                      <a href="/admin/timetables/time-detail"><div class="card">
+                                    <div class="card-block">
+                                        <p>5CS A</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>5CS B</p>
+                                    </div>
+                                    <div class="card-block">
+                                        <p>5CST</p>
+                                    </div>
+                                </div></a>
+                            </div>
+
+                            <!-- .card -->
+                            <!-- End Classic table -->
+                            <!-- End Introduction -->
+
+
+
+                            <!-- Payments -->
+
+                        </div>
+                    </div>
+                    <!-- End Section Content -->
+                </div>
+            </div>
+                    <!-- End Categories -->
+
+                </main>
+
+                <footer class="app-layout-footer">
+                    <div class="container p-y-md">
+                        <div class="pull-right hidden-sm hidden-xs">
+                            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                        </div>
+                        <div class="pull-left text-center text-md-left">
+                            AppUI &copy; <span class="js-year-copy"></span>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- .app-layout-container -->
+        </div>
+        <!-- .app-layout-canvas -->
+
+        <!-- Apps Modal -->
+        <!-- Opens from the button in the header -->
+
+        <!-- End Apps Modal -->
+
+        <% include ../../partial/script %>
+
+    </body>
+
 </html>

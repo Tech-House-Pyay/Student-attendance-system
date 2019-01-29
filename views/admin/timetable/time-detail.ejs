@@ -1,77 +1,190 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Timetable Detail...</h1>
-    teacher_Name:<%= timetable.teacher_id %><p>
-      Subject_Name:<%= timetable.subname %><p>
-        Class:<span id="class"></span><p>
-          Time:<%= timetable.time %><p>
-            Day:<span id="day"></span><p>
-              <a href="/admin/timetables/update/<%=teacher._id %>"><button type="button" name="button">Update</button></a>
-              <button type="button" onclick="del()" name="button">Delete</button>
-  </body>
-  <script type="text/javascript">
-    var cl = document.getElementById('class');
-    switch ("<%= timetable.class %>") {
-      case "1csta":
-        cl.innerHTML= "1CST A";
-        break;
-      case "1cstb":
-        cl.innerHTML= "1CST B";
-        break;
-      case "1cstc":
-        cl.innerHTML= "1CST C";
-        break;
-      case "2csa":
-        cl.innerHTML= "2CS A";
-        break;
-      case "2csb":
-        cl.innerHTML= "2CS B";
-        break;
-      case "2ct":
-        cl.innerHTML= "2CT";
-        break;
-        case "3csa":
-          cl.innerHTML= "3CS A";
-          break;
-        case "3csb":
-          cl.innerHTML= "3CS B";
-          break;
-        case "3ct":
-          cl.innerHTML= "3CT";
-          break;
-          case "4csa":
-            cl.innerHTML= "4CS A";
-            break;
-          case "4csb":
-            cl.innerHTML= "4CS B";
-            break;
-          case "4ct":
-            cl.innerHTML= "4CT";
-            break;
-            case "5csa":
-              cl.innerHTML= "5CS A";
-              break;
-            case "5csb":
-              cl.innerHTML= "5CS B";
-              break;
-            case "5ct":
-              cl.innerHTML= "5CT";
-              break;
 
-      default:
-      console.log("Please enter your class");
+<html class="app-ui">
 
-    }
-    function del() {
-      var co=confirm('Are yor sure!!?');
+<head>
+  <!-- Meta -->
+  <% include ../../partial/head %>
+  <!-- End Stylesheets -->
+</head>
 
-    if(co)
-    location.href="/admin/timetables/delete/<%=teacher._id %>";
-  }
-  </script>
+<body class="app-ui">
+  <div class="app-layout-canvas">
+    <div class="app-layout-container">
+
+      <!-- Header -->
+      <header class="app-layout-header">
+        <nav class="navbar navbar-default p-y">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <% include ../../partial/user-header %>
+
+              <main class="app-layout-content">
+
+                <!-- Page header -->
+                <div class="page-header bg-app bg-inverse">
+                  <div class="container">
+                    <!-- Section Content -->
+                    <div class="p-y-lg text-center">
+                      <h1 class="display-2">Time Table</h1>
+
+                      <!-- Search form -->
+                      <!-- <div class="row m-t">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <form action="frontend_search.html" method="post">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" placeholder="Search support.." />
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-default"><i class="ion-ios-search-strong"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> -->
+                      <!-- End search form -->
+                    </div>
+                    <!-- End Section Content -->
+                  </div>
+                </div>
+                <!-- End Page header -->
+
+                <!-- Categories -->
+                <div class="page-content bg-white">
+                  <div class="container">
+                    <% include ../../partial/user-submenu %>
+                    <div class="row">
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <!-- Introduction -->
+                        <h2 class="h3 m-t-lg m-b">Time Table</h2>
+                        <!-- Classic table -->
+                        <h2 class="section-title">2 CS A Class</h2>
+                        <div class="card">
+                          <div class="table-responsive">
+                            <table class="table table-borderless table-header-bg text-center m-b-0">
+                              <thead>
+                                <tr>
+                                  <th class="w-15"></th>
+                                  <th class="text-center">1</th>
+                                  <th class="text-center">2</th>
+                                  <th class="text-center">3</th>
+                                  <th class="text-center">4</th>
+                                  <th class="text-center">5</th>
+                                  <th class="text-center">6</th>
+                                  <th class="text-center">7</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td class="font-500 text-left">Monday</td>
+                                  <td>Information Security And Insurence</td>
+                                  <td>IS</td>
+                                  <td>Distributed</td>
+                                  <td>ERP/Data Mining</td>
+                                  <td>Data Mining/shapebootstrap</td>
+                                  <td>Discus Project</td>
+                                  <td>Discus Project</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-500 text-left">Tuesday</td>
+                                  <td>Operation Research</td>
+                                  <td>OR</td>
+                                  <td>NLP/AA</td>
+                                  <td>IS</td>
+                                  <td>IS</td>
+                                  <td>English</td>
+                                  <td>English</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-500 text-left">Wednesday</td>
+                                  <td>Distributed</td>
+                                  <td>DS</td>
+                                  <td>OR</td>
+                                  <td>ERP/Data Mining  </td>
+                                  <td>ERP/Data Mining</td>
+                                  <td>NLP/AA</td>
+                                  <td>AA/NLP</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-500 text-left">Thursday</td>
+                                  <td>IS</td>
+                                  <td>ERP/Mining</td>
+                                  <td>NLP/AA</td>
+                                  <td>OR</td>
+                                  <td>OR</td>
+                                  <td>TCP/IP</td>
+                                  <td>TCP/IP</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-500 text-left">Friday</td>
+                                  <td>English</td>
+                                  <td>English</td>
+                                  <td>TCP/IP</td>
+                                  <td>OR</td>
+                                  <td>oR</td>
+                                  <td>Discus Project</td>
+                                  <td>Discus Project</td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- .card-block -->
+                        </div>
+                        <!-- .card -->
+                        <!-- End Classic table -->
+                        <!-- End Introduction -->
+
+
+
+                        <!-- Payments -->
+
+                      </div>
+                    </div>
+                    <!-- End Section Content -->
+                  </div>
+                </div>
+                <!-- End Categories -->
+
+              </main>
+
+              <footer class="app-layout-footer">
+                <div class="container p-y-md">
+                  <div class="pull-right hidden-sm hidden-xs">
+                    <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                  </div>
+                  <div class="pull-left text-center text-md-left">
+                    AppUI &copy; <span class="js-year-copy"></span>
+                  </div>
+                </div>
+              </footer>
+
+            </div>
+            <!-- .app-layout-container -->
+          </div>
+          <!-- .app-layout-canvas -->
+
+          <!-- Apps Modal -->
+          <!-- Opens from the button in the header -->
+
+          <!-- End Apps Modal -->
+
+          <% include ../../partial/script %>
+
+</body>
+
 </html>

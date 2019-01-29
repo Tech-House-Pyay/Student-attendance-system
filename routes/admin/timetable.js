@@ -29,11 +29,7 @@ router.get('/list',function(req,res,next){
     res.render('admin/timetable/time-list',{subject:rtn});
   });
 });
-router.get('/time-detail/:id',function(req,res,next){
-  Timetable.findById(req.params.id).populate('teacher_id').exec(function(err,rtn){
-    if (err) throw err;
-    console.log(rtn);
-    res.render('admin/timetable/time-detail',{timetable:rtn});
+router.get('/time-detail',function(req,res,next){
+    res.render('admin/timetable/time-detail');
   });
-});
 module.exports = router;

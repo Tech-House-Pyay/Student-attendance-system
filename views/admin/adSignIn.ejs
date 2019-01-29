@@ -32,7 +32,7 @@
                         <div class="container">
                             <!-- Section Content -->
                             <div class="p-y-lg text-center">
-                                <h1 class="display-2">Teacher Login</h1>
+                                <h1 class="display-2">Admin Login</h1>
                                 <p class="text-muted">Unlimited ideas. Unlimited power. Unlimited joy. Unlimited opportunities.</p>
                             </div>
                             <!-- End Section Content -->
@@ -50,7 +50,7 @@
                                     <div class="card">
                                         <h3 class="card-header h4">Login</h3>
                                         <div class="card-block">
-                                            <form action="/login" method="post">
+                                            <form action="/adsignin" method="post">
                                                 <div class="form-group">
                                                     <label class="sr-only" for="frontend_login_email">Email</label>
                                                     <input type="email" class="form-control" name="email" id="frontend_login_email" placeholder="Email" />
@@ -65,6 +65,7 @@
 								</label>
                                                 </div>
                                                 <button type="submit" class="btn btn-app btn-block">Login</button>
+                                                <a href="/signup">Don't Have account</a>
                                             </form>
                                         </div>
                                         <!-- .card-block -->
@@ -86,30 +87,7 @@
                     <!-- End page content -->
 
                     <!-- Modal -->
-                    <div class="modal" id="modal-signup-terms" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="card-header bg-blue bg-inverse">
-                                    <h4>Terms &amp; Conditions</h4>
-                                    <ul class="card-actions">
-                                        <li>
-                                            <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block">
-                                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant
-                                        quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant
-                                        quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Close</button>
-                                    <button class="btn btn-sm btn-app" type="button" data-dismiss="modal"><i class="ion-checkmark"></i> Ok</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- End modal -->
 
                 </main>

@@ -4,15 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var student = require('./routes/admin/student');
-var teacher = require('./routes/admin/teacher');
-var subject = require('./routes/admin/subject');
-var attendance = require('./routes/admin/attendance');
-var teacherU = require('./routes/users/teacher');
-var studentU = require('./routes/users/student');
+var admin = require('./routes/admin');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -20,6 +16,17 @@ mongoose.connect('mongodb://127.0.0.1/sasdb')
 // mongoose.connect('mongodb://yethuaung:Zikimi95@ds125048.mlab.com:25048/studynode');
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'MongoDB connection error:'));
+
+app.use(session({
+      secret: '@$TuD@ntA&tte!#$%^&09,',// any string for security
+      resave: false,
+      saveUninitialized : true
+}));
+
+app.use(function (req,res,next) {
+  res.locals.user = req.session.user;
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,14 +39,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/admin/students', student);
-app.use('/admin/teachers', teacher);
-app.use('/admin/subjects', subject);
-app.use('/admin/attendances', attendance);
-app.use('/user/teachers', teacherU);
-app.use('/user/students', studentU);
-
+app.use(function(req, res, next){
+  if(req.session.users){
+    next();
+  }else {
+    res.redirect('/');// redirect to other page
+  }
+});
+app.use('/admin', admin);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

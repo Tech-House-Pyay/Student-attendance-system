@@ -12,7 +12,7 @@ router.get('/attendancelist',function(req,res,next){
 Attendance.find({}, function(err,rtn){
     if(err) throw err;
     console.log(rtn);
-  res.render('admin/attendance/atten-studentdetail');
+  res.render('admin/attendance/atten-listdetail');
 });
 });
 
@@ -20,7 +20,7 @@ router.get('/studentdetail',function(req,res,next){
 Attendance.find({}, function(err,rtn){
     if(err) throw err;
     console.log(rtn);
-  res.render('admin/attendance/atten-listdetail');
+  res.render('admin/attendance/atten-studentdetail');
 });
 });
 

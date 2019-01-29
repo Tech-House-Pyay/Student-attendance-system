@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="app-ui">
+
+    <head>
+        <!-- Meta -->
+        <% include ../../partial/head %>
+        <!-- End Stylesheets -->
+        <link rel="stylesheet" href="/stylesheets/jquery.dataTables.min.css">
+    </head>
+
+    <body class="app-ui">
+        <div class="app-layout-canvas">
+            <div class="app-layout-container">
+
+                <!-- Header -->
+                <header class="app-layout-header">
+                    <nav class="navbar navbar-default p-y">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
+                        				<span class="sr-only">Toggle navigation</span>
+                        					<span class="icon-bar"></span>
+                        					<span class="icon-bar"></span>
+                        					<span class="icon-bar"></span>
+                        				</button>
+                                <% include ../../partial/user-header %>
+
+                <main class="app-layout-content">
+
+                    <!-- Page header -->
+                    <div class="page-header bg-app bg-inverse">
+                        <div class="container">
+                            <!-- Section Content -->
+                            <div class="p-y-lg text-center">
+                                <h1 class="display-2">Call Attendance</h1>
+
+                                <!-- Search form -->
+                                <!-- <div class="row m-t">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <form action="frontend_search.html" method="post">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control" type="text" placeholder="Search support.." />
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-default"><i class="ion-ios-search-strong"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> -->
+                                <!-- End search form -->
+                            </div>
+                            <!-- End Section Content -->
+                        </div>
+                    </div>
+                    <!-- End Page header -->
+
+                    <!-- Categories -->
+                    <div class="page-content bg-white">
+                        <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <!-- Introduction -->
+                            <h2 class="h3 m-t-lg m-b">Call Attendance</h2>
+                            <!-- Classic table -->
+                            <div class="col-lg-12 col-lg-3">
+                              <table id="example" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Roll No</th>
+                                        <th>Attendance/Absent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr>
+                                        <td>Mg Mg</td>
+                                        <td>1</td>
+                                        <td><input type="checkbox" id="roll1" name="roll" value="123"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Aung Aung</td>
+                                        <td>2</td>
+                                        <td><input type="checkbox" id="roll2" name="roll" value="456" ></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Ko Ko</td>
+                                        <td>3</td>
+                                        <td><input type="checkbox" id="roll3" name="roll" value="789"></td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Bo Bo</td>
+                                        <td>4</td>
+                                        <td><input type="checkbox" id="roll4" name="roll" value="012"></td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Phyo Phyo</td>
+                                        <td>5</td>
+                                        <td><input type="checkbox" id="roll5" name="roll" value="1357"></td>
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>RollNo</th>
+                                        <th>Attendance/Absent</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            </div>
+                            <!-- .card -->
+                            <!-- End Classic table -->
+                            <!-- End Introduction -->
+
+
+
+                            <!-- Payments -->
+                          <button type="button" class="btn btn-app-green" id="button" name="button">Submit</button>
+                        </div>
+                    </div>
+                    <!-- End Section Content -->
+                </div>
+            </div>
+                    <!-- End Categories -->
+
+                </main>
+
+                <footer class="app-layout-footer">
+                    <div class="container p-y-md">
+                        <div class="pull-right hidden-sm hidden-xs">
+                            <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                        </div>
+                        <div class="pull-left text-center text-md-left">
+                            AppUI &copy; <span class="js-year-copy"></span>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- .app-layout-container -->
+        </div>
+        <!-- .app-layout-canvas -->
+
+        <!-- Apps Modal -->
+        <!-- Opens from the button in the header -->
+
+        <!-- End Apps Modal -->
+
+        <% include ../../partial/script %>
+
+    </body>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" charset="utf-8"></script> -->
+    <script src="/javascripts/jquery.dataTables.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+          var table = $('#example').DataTable();
+
+          $('button').click( function() {
+            console.log('click');
+              var data = table.$('input').serialize();
+              var record = {attendance: data}
+              $.ajax({
+                  "url": "/users/teachers/calling",
+                  "type": "POST",
+                  // "dataType": "jsonp",
+                  "data" : record
+              })
+              // return false;
+          } );
+        } );
+
+    </script>
+
+</html>

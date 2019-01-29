@@ -30,38 +30,41 @@
                          <!-- Registration forms -->
 
                          <div class="row">
-                             <div class="col-lg-4">
+                           <div class="col-lg-2">
+
+                           </div>
+                             <div class="col-lg-8">
                                  <!-- Bootstrap registration -->
                                  <div class="card">
                                      <div class="card-header bg-green bg-inverse">
                                         <h2>Timetable Add...</h2>
-                                         <ul class="card-actions">
-                                             <li>
-                                                 <button type="button" data-toggle="card-action" data-action="refresh_toggle" data-action-mode="demo"><i class="ion-refresh"></i></button>
-                                             </li>
-                                             <li>
-                                                 <button type="button" data-toggle="card-action" data-action="content_toggle"></button>
-                                             </li>
-                                         </ul>
+
                                      </div>
                                      <div class="card-block">
-                                         <form class="form-horizontal" action="admin/timetable/add" method="post">
+                                         <form class="form-horizontal" action="/admin/timetable/add" method="post">
+                                           <div class="form-group">
+
+                                           </div>
                                              <div class="form-group">
-                                               <label class="col-xs-12" for="teacher_id">Teacher_Name:</label>
-                                               <select class="select-control" id="teacher_id" name="teacherid">
-                                                 <option value="986aqw071wwwrrrryy009">Daw Khin Mee Mee Thein</option>
+                                               <label class="col-xs-2" for="teacher_id">Teacher_Name:</label>
+                                               <div class="col-xs-10">
+                                               <select class="form-control" id="teacher_id" name="teacher_id">
+
                                                </select>
                                                  </div>
-                                             </div>
+                                               </div>
+
                                              <div class="form-group">
-                                                 <label class="col-xs-12" for="name">Subject Name:</label>
-                                                 <div class="col-xs-12">
-                                                     <input class="form-control" type="text" id="name" name="name"  />
+                                                 <label class="col-xs-2" for="name">Subject Name:</label>
+                                                 <div class="col-xs-10">
+                                                   <select class="form-control" id="subname" name="subname">
+
+                                                   </select>
                                                  </div>
                                              </div>
                                              <div class="form-group">
-                                                <label class="col-xs-12" for="class">Class:</label>
-                                               <div class="col-xs-12">
+                                                <label class="col-xs-2" for="class">Class:</label>
+                                               <div class="col-xs-10">
                                                  <select class="form-control" id="class" name="class">
                                                    <option value="1csta">1CST A</option>
                                                    <option value="1cstb">1CST B</option>
@@ -82,8 +85,8 @@
                                                </div>
                                              </div>
                                              <div class="form-group">
-                                               <label class="col-xs-12" for="time">Time:</label>
-                                               <div class="col-xs-12">
+                                               <label class="col-xs-2" for="time">Time:</label>
+                                               <div class="col-xs-10">
                                                  <select class="form-control" id="time" name="time">
                                                    <option value="1">1</option>
                                                    <option value="2">2</option>
@@ -96,12 +99,11 @@
                                                </div>
 
                                                  </div>
-                                             </div>
+
                                              <div class="form-group">
-                                                 <div class="col-xs-12">
-                                                   <label class="col-xs-12" for="day">Day:</label>
-                                                   <div class="col-xs-12">
-                                                     <select class="form-group" id="day" name="day">
+                                                   <label class="col-xs-2" for="day">Day:</label>
+                                                   <div class="col-xs-10">
+                                                     <select class="form-control" id="day" name="day">
                                                        <option value="1">Monday</option>
                                                        <option value="2">Tuesday</option>
                                                        <option value="3">Wednesday</option>
@@ -110,22 +112,35 @@
                                                      </select>
                                                    </div>
                                                  </div>
-                                             </div>
+                                                 <div class="form-group">
+
+                                                 </div>
+                                                 <div class="form-group">
+
+                                                 </div>
                                              <div class="form-group m-b-0">
-                                                 <div class="col-xs-12">
+                                               <div class="col-xs-10">
+
+                                               </div>
+                                                 <div class="col-xs-2">
                                                      <button class="btn btn-app" type="submit">Submit</button>
                                                  </div>
                                              </div>
                                          </form>
+                                         </div>
                                      </div>
                                      <!-- .card-block -->
                                  </div>
+
                                  <!-- .card -->
                                  <!-- End Bootstrap registration -->
                              </div>
+                             <div class="col-lg-2">
+
+                             </div>
                              <!-- .col-lg-4 -->
         <!-- End Page Content -->
-
+      </div>
       </main>
 
     </div>
@@ -135,41 +150,7 @@
 
   <!-- Apps Modal -->
   <!-- Opens from the button in the header -->
-  <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-sm modal-dialog modal-dialog-top">
-      <div class="modal-content">
-        <!-- Apps card -->
-        <div class="card m-b-0">
-          <div class="card-header bg-app bg-inverse">
-            <h4>Apps</h4>
-            <ul class="card-actions">
-              <li>
-                <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
-              </li>
-            </ul>
-          </div>
-          <div class="card-block">
-            <div class="row text-center">
-              <div class="col-xs-6">
-                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
-                  <i class="ion-speedometer fa-4x"></i>
-                  <p>Admin</p>
-                </a>
-              </div>
-              <div class="col-xs-6">
-                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
-                  <i class="ion-laptop fa-4x"></i>
-                  <p>Frontend</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- .card-block -->
-        </div>
-        <!-- End Apps card -->
-      </div>
-    </div>
-  </div>
+
   <!-- End Apps Modal -->
 
   <div class="app-ui-mask-modal"></div>
@@ -178,5 +159,27 @@
   <% include ../../partial/script %>
 
 </body>
+<script type="text/javascript">
+  var subject = [<%- subj %>];
 
+  console.log(subject);
+  addOptions('teacher_id', subject);
+  $("#teacher_id").on('change', function(){
+      var sub = $.grep( subject, function( n, i ) {
+        return n.teacher_id.name == $("#teacher_id").val();
+      });
+      addOptions('subname', sub);
+  });
+
+  function addOptions(id, arr){
+      $("#"+id).children().remove();
+      for(var idx in arr){
+          if(idx == 0) $("#"+id).append(new Option('Select '+((id == 'teacher_id')? "Teacher": "Subject"), ''));
+          if(idx == 0 || ((id == 'teacher_id')? arr[idx][id].name != arr[idx-1][id].name : arr[idx][id] != arr[idx-1][id])){
+              $("#"+id).append(new Option(((id == 'teacher_id')? arr[idx][id].name:arr[idx][id]),((id == 'teacher_id')? arr[idx][id].name:arr[idx][id])));
+
+          }
+      }
+  }
+</script>
 </html>

@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var Timetable= require('../../model/Timetable');
-// var Teacher= require('../../model/Teacher');
+var Subject= require('../../model/Subject');
 /* GET home page. */
 router.get('/', function(req, res, next) {
       res.render('index', { title: 'Express' });
 });
 router.get('/add',function(req,res,next){
-  res.render('admin/timetable/time-add',{ title: 'Express'});
+  Subject.find({},{'subname': 1, _id: 0}).populate('teacher_id', { name: 1, _id:0}).exec(function (err,rtn) {
+    if(err) throw err;
+    console.log(typeof rtn);
+    console.log(rtn);
+    res.render('admin/timetable/time-add',{ title: 'Express', subj: rtn});
+  });
  });
 
 router.post('/add',function(req,res,next){

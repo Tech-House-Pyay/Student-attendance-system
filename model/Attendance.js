@@ -5,9 +5,9 @@ var Schema = mongoose.Schema;
      type:Schema.Types.ObjectId,
      ref:'Teacher',
    },
-   subject_id:{
-     type:Schema.Types.ObjectId,
-     ref:'Subject',
+   subjectName:{
+     type:String,
+     require:true,
    },
  student_id:{
      type:Schema.Types.ObjectId,
@@ -27,12 +27,12 @@ var Schema = mongoose.Schema;
      default:Date.now
    },
    attendance_count:{
-     type:String,
+     type:Number,
      require:true,
    },
    total_count:{
-     type:String,
-     require:true,
+     type:Number,
+     default: 1
    },
 
  });

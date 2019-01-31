@@ -1,9 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var TimeSchema=new Schema({
-  teacher_id:{
-    type:Schema.Types.ObjectId,
-    ref:'Teacher',
+  teacherName:{
+    type:String,
+    require:true,
+  },
+  subcode:{
+    type:String,
+    ref:'Subject'
   },
   subname:{
     type:String,

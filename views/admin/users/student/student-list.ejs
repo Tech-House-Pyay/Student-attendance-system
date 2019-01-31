@@ -15,7 +15,7 @@
       <!-- Drawer -->
 
             <% include ../../../partial/nav-drawer %>
-          
+
       <!-- End drawer -->
 
       <!-- Header -->
@@ -39,8 +39,6 @@
                                 <th>Name</th>
                                 <th class="hidden-xs">Email</th>
                                 <th class="hidden-xs w-20">Init password</th>
-                                <th class="hidden-xs">Major</th>
-                                <th class="hidden-xs">Year</th>
                                 <th class="hidden-xs">Roll</th>
                                 <th class="hidden-xs">Class</th>
                             </tr>
@@ -51,12 +49,10 @@
                               <td><a href="/admin/students/student-detail/<%=student[i]._id%>"><%= student[i].name%></a></td>
                               <td><%= student[i].email %></td>
                               <td><%= student[i].password %></td>
-                              <td id="mar<%=i%>"></td>
-                              <td  id="yea<%=i%>"></td>
                               <td><%= student[i].roll %></td>
                               <td><%= student[i].class %></td>
                             </tr>
-                            <script type="text/javascript">
+                          <!-- <script type="text/javascript">
                             var data = document.getElementById('yea<%=i%>');
                             console.log(<%= student[i].year%>);
                               switch ("<%= student[i].year %>") {
@@ -92,7 +88,7 @@
                                   default:
                                   console.log("Marjor is not define");
                                 }
-                            </script>
+                            </script> -->
                             <%}%>
                         </tbody>
                     </table>

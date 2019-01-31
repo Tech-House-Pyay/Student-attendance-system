@@ -14,18 +14,9 @@ var Schema = mongoose.Schema;
      type: String,
      required:true,
    },
-   major:{
-     type:String,
-     required:true,
-   },
-  year:{
-     type: String,
-     required:true,
-   },
   roll:{
      type: Number,
      required:true,
-
    },
 class:{
   type: String,

@@ -20,6 +20,7 @@ router.post('/add',function(req,res,next){
   subject.teacher_id=req.body.teacher;
   subject.subname=req.body.name;
   subject.major=req.body.major;
+  subject.subCode = req.body.subCode;
   subject.year=req.body.year;
   subject.save(function(err,rtn){
     if (err)throw err;
@@ -34,6 +35,7 @@ router.post('/update',function(req,res,next){
     name:req.body.subname,
     major:req.body.major,
     year:req.body.year,
+    subCode:req.body.subCode
   }
     Subject.findByIdAndUpdate(req.body.id,{$set:update},function(err,rtn){
       if(err) throw err;

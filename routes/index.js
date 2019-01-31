@@ -80,7 +80,7 @@ router.post('/login', function(req, res, next) {
     if(rtn == null || rtn.password != req.body.password){
       res.redirect('/login')
     }else{
-      req.session.users = {email: rtn.email, name: rtn.name, roll: "teacher"};
+      req.session.users = {email: rtn.email, name: rtn.name, roll: "teacher", id: rtn._id};
       res.redirect('/users/teachers/home');
 
     }

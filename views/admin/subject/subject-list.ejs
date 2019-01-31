@@ -15,7 +15,7 @@
       <!-- Drawer -->
 
             <% include ../../partial/nav-drawer %>
-          
+
       <!-- End drawer -->
 
       <!-- Header -->
@@ -39,6 +39,7 @@
 
                                 <th>Name</th>
                                 <th>Major</th>
+                                <th>Subject Code</th>
                                 <th>Year</th>
 
                             </tr>
@@ -48,6 +49,7 @@
           <tr>
             <!-- <td><%= subject[i].teacher_id %></td> -->
             <td><a href="/admin/subjects/subject-detail/<%= subject[i]._id %>"><%= subject[i].subname %></a></td>
+            <td><%= subject[i].subCode %></td>
             <td id="major<%= i %>"></td>
             <td id="year<%= i %>"></td>
           </tr>

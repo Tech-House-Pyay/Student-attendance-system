@@ -15,7 +15,7 @@
       <!-- Drawer -->
 
             <% include ../../../partial/nav-drawer %>
-          
+
       <!-- End drawer -->
 
       <!-- Header -->
@@ -56,36 +56,11 @@
                                     <input class="form-control" type="password" id="register1-password" name="teapwd" value="<%= student.password %>" placeholder="Enter password..." />
                                 </div>
                             </div>
-                                                   <div class="form-group">
-                                                <div class="col-xs-12">
-                                                    <div class="form-material floating">
-                                                        <select class="form-control" id="major" name="stumajor" size="1">
-                                                          <option value="00">Computer Science</option>
-                                                          <option value="01">Computer Technolegy</option>
-                                                          <option value="10">Computer Science and Technolegy</option>
-                                                        </select>
-                                                        <label for="major">Major:</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                     <div class="form-group">
-                                                       <div class="col-xs-12">
-                                                           <div class="form-material floating">
-                                                       <label for="year"> Year:</label>
-                                                       <select class="form-control" id="year" name="stuyear">
-                                                         <option value="1">First Year</option>
-                                                         <option value="2">Second Year</option>
-                                                         <option value="3">Third Year</option>
-                                                         <option value="4">Fourth Year</option>
-                                                         <option value="5">fifth Year</option><
-                                                       </select><p>
-                                                     </div>
-                                                   </div>
-                                                 </div>
+
                                                  <div class="form-group">
                                                      <label class="col-xs-12" for="register1-password">Roll:</label>
                                                      <div class="col-xs-12">
-                                                         <input class="form-control" type="password" id="register1-password" name="sturoll" value="<%= student.roll%>" placeholder="Enter password..." />
+                                                         <input class="form-control" type="number" id="register1-password" name="sturoll" value="<%= student.roll%>" placeholder="Enter password..." />
                                                      </div>
                                                  </div>
 
@@ -93,10 +68,22 @@
                                                        <div class="col-xs-12">
                                                           <div class="form-material floating">
                                                        <label for="stclass">Class:</label>
-                                                       <select class="form-control" id="stclass" name="stuclass">
-                                                         <option value="section A">Section A</option>
-                                                         <option value="section B">Section B</option>
-                                                         <option value="section C">Section C</option>
+                                                       <select class="form-control" id="class" name="class">
+                                                         <option value="1csta">1CST A</option>
+                                                         <option value="1cstb">1CST B</option>
+                                                         <option value="1cstc">1CST C</option>
+                                                         <option value="2csa">2CS A</option>
+                                                         <option value="2csb">2CS B</option>
+                                                         <option value="2ct">2CT</option>
+                                                         <option value="3csa">3CS A</option>
+                                                         <option value="3csb">3CS B</option>
+                                                         <option value="3ct">3CT</option>
+                                                         <option value="4csa">4CS A</option>
+                                                         <option value="4csb">4CS B</option>
+                                                         <option value="4ct">4CT</option>
+                                                         <option value="5csa">5CS A</option>
+                                                         <option value="5csb">5CS B</option>
+                                                         <option value="5ct">5CT</option>
                                                        </select>
                                                      </div>
                                                    </div>

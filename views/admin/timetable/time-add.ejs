@@ -41,9 +41,9 @@
 
                                      </div>
                                      <div class="card-block">
-                                         <form class="form-horizontal" action="/admin/timetable/add" method="post">
+                                         <form class="form-horizontal" name="frm" action="/admin/timetables/add" method="post">
                                            <div class="form-group">
-
+                                             <input type="hidden" name="subCode" value="subCode" id="subCode">
                                            </div>
                                              <div class="form-group">
                                                <label class="col-xs-2" for="teacher_id">Teacher_Name:</label>
@@ -123,7 +123,7 @@
 
                                                </div>
                                                  <div class="col-xs-2">
-                                                     <button class="btn btn-app" type="submit">Submit</button>
+                                                     <button class="btn btn-app" id="submitbtn" type="button">Submit</button>
                                                  </div>
                                              </div>
                                          </form>
@@ -181,5 +181,26 @@
           }
       }
   }
+
+
+    $("#subname").on('change',function () {
+      var code = $.grep(subject, function ( n, i) {
+        return n.subname == $('#subname').val()
+      });
+      $('#subCode').val(code[0].subCode);
+      console.log($('#subCode').val());
+    });
+
+    $('#submitbtn').on('click',function () {
+      var data = {day : $('#day').val(),time : $('#time').val(), cla : $('#class').val()}
+      $.ajax({url: "/admin/timetables/duplicate", data:data, type: 'POST', success: function (result) {
+        if (result.status == false) {
+          alert(result.msg);
+        }else {
+          frm.submit();
+        }
+      }});
+    })
+
 </script>
 </html>

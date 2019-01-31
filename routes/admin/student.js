@@ -16,10 +16,8 @@ var student =new Student();
   student.name=req.body.stuname;
   student.email=req.body.stuemail;
   student.password=req.body.stupwd;
-  student.major=req.body.stumajor;
-  student.year=req.body.stuyear;
   student.roll=req.body.sturoll;
-  student.class=req.body.stuclass;
+  student.class=req.body.class;
   student.save(function(err,rtn){
     if(err) throw err;
     res.redirect('/admin/students/student-detail/'+rtn._id);
@@ -41,10 +39,8 @@ var student =new Student();
       name: req.body.stuname,
       email: req.body.stuemail,
       password: req.body.stupwd,
-    major: req.body.stumajor,
-      year:req.body.stuyear,
      roll: req.body.sturoll,
-     class: req.body.stuclass,
+     class: req.body.class,
    }
       Student.findByIdAndUpdate(req.body.id,{$set: update},function(err,rtn){
       if(err) throw err;

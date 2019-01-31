@@ -62,6 +62,8 @@
                         <div class="col-sm-10 col-sm-offset-1">
                             <!-- Introduction -->
                             <h2 class="h3 m-t-lg m-b">Call Attendance</h2>
+                            <h3 class="section-title"><%= stu[0].class %></h3>
+                            <h4><%= sub %></h4>
                             <!-- Classic table -->
                             <div class="col-lg-12 col-lg-3">
                               <table id="example" class="display" style="width:100%">
@@ -74,39 +76,14 @@
                                 </thead>
                                 <tbody>
 
-
+                                  <% for(var i = 0; i< stu.length; i++){%>
                                     <tr>
-                                        <td>Mg Mg</td>
-                                        <td>1</td>
-                                        <td><input type="checkbox" id="roll1" name="roll" value="123"></td>
+                                        <td><%= stu[i].name %></td>
+                                        <td><%= stu[i].roll %></td>
+                                        <td><input type="checkbox" id="roll1" name="roll" value="<%= stu[i]._id%>"></td>
 
                                     </tr>
-                                    <tr>
-                                        <td>Aung Aung</td>
-                                        <td>2</td>
-                                        <td><input type="checkbox" id="roll2" name="roll" value="456" ></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>Ko Ko</td>
-                                        <td>3</td>
-                                        <td><input type="checkbox" id="roll3" name="roll" value="789"></td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>Bo Bo</td>
-                                        <td>4</td>
-                                        <td><input type="checkbox" id="roll4" name="roll" value="012"></td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>Phyo Phyo</td>
-                                        <td>5</td>
-                                        <td><input type="checkbox" id="roll5" name="roll" value="1357"></td>
-
-                                    </tr>
+                                  <%}%>
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -170,12 +147,18 @@
           $('button').click( function() {
             console.log('click');
               var data = table.$('input').serialize();
-              var record = {attendance: data}
+              var record = {attendance: data, stuclass: '<%= stu[0].class %>', sub : '<%= sub %>'}
               $.ajax({
                   "url": "/users/teachers/calling",
                   "type": "POST",
                   // "dataType": "jsonp",
-                  "data" : record
+                  "data" : record,
+                  success: function (result) {
+                    if (result.status) {
+                      alert("Successfully Called!!");
+                      location.href = "/users/teachers/home";
+                    }
+                  }
               })
               // return false;
           } );

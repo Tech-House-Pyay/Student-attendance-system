@@ -5,66 +5,41 @@
 <head>
   <!-- Meta -->
   <% include ../../partial/head %>
+  <script src="/assets/js/core/jquery.min.js"></script>
   <!-- End Stylesheets -->
 </head>
 
-<body class="app-ui">
+<body class="app-ui layout-has-drawer layout-has-fixed-header">
   <div class="app-layout-canvas">
     <div class="app-layout-container">
 
+      <!-- Drawer -->
+
+            <% include ../../partial/nav-drawer %>
+
+      <!-- End drawer -->
+
       <!-- Header -->
-      <header class="app-layout-header">
-        <nav class="navbar navbar-default p-y">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <% include ../../partial/user-header %>
+      <% include ../../partial/header %>
+      <!-- End header -->
 
-              <main class="app-layout-content">
+      <main class="app-layout-content">
 
-                <!-- Page header -->
-                <div class="page-header bg-app bg-inverse">
-                  <div class="container">
-                    <!-- Section Content -->
-                    <div class="p-y-lg text-center">
-                      <h1 class="display-2">Time Table</h1>
+        <!-- Page Content -->
+        <div class="container-fluid p-y-md">
+                            <!-- Section Content -->
 
-                      <!-- Search form -->
-                      <!-- <div class="row m-t">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <form action="frontend_search.html" method="post">
-                                            <div class="input-group input-group-lg">
-                                                <input class="form-control" type="text" placeholder="Search support.." />
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-default"><i class="ion-ios-search-strong"></i></button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div> -->
-                      <!-- End search form -->
-                    </div>
-                    <!-- End Section Content -->
-                  </div>
-                </div>
-                <!-- End Page header -->
-
-                <!-- Categories -->
-                <div class="page-content bg-white">
-                  <div class="container">
-                    <% include ../../partial/user-submenu %>
                     <div class="row">
                       <div class="col-sm-10 col-sm-offset-1">
                         <!-- Introduction -->
                         <h2 class="h3 m-t-lg m-b">Time Table</h2>
                         <!-- Classic table -->
-                        <h2 class="section-title">2 CS A Class</h2>
+                        <% if(subj.length < 35){%>
+                          <h2>Time Table is not complete for loading</h2>
+                        <%}else{%>
+                        <h2 class="section-title"><%= subj[0].class %> Class</h2>
                         <div class="card">
+
                           <div class="table-responsive">
                             <table class="table table-borderless table-header-bg text-center m-b-0">
                               <thead>
@@ -88,63 +63,48 @@
                                   <td></td>
                                   <td></td>
                                   <td></td>
+                                  <% for(var i = 0; i< subj.length; i++){%>
+                                    <%if(i== 0 || i%7 == 0){%>
+                                    </tr>
+                                    <tr>
+                                      <td class="font-500 text-left" id="t<%=i%>"></td>
+                                      <script type="text/javascript">
+                                      console.log();
+                                        switch ('<%=subj[i].day%>') {
+                                          case '1':
+                                            $('#t<%=i%>').html('Monday')
+                                            break;
+                                          case '2':
+                                            $('#t<%=i%>').html('Thursday')
+                                            break;
+                                          case '3':
+                                            $('#t<%=i%>').html('Wednesday')
+                                            break;
+                                          case '4':
+                                            $('#t<%=i%>').html('Tuesday')
+                                            break;
+                                          case '5':
+                                            $('#t<%=i%>').html('Friday')
+                                            break;
+                                          default:
+
+                                        }
+                                      </script>
+                                    <%}%>
+
+                                    <td><%= subj[i].subname %></td>
+
+                                  <%}%>
                                 </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Monday</td>
-                                  <td>Information Security And Insurence</td>
-                                  <td>IS</td>
-                                  <td>Distributed</td>
-                                  <td>ERP/Data Mining</td>
-                                  <td>Data Mining/shapebootstrap</td>
-                                  <td>Discus Project</td>
-                                  <td>Discus Project</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Tuesday</td>
-                                  <td>Operation Research</td>
-                                  <td>OR</td>
-                                  <td>NLP/AA</td>
-                                  <td>IS</td>
-                                  <td>IS</td>
-                                  <td>English</td>
-                                  <td>English</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Wednesday</td>
-                                  <td>Distributed</td>
-                                  <td>DS</td>
-                                  <td>OR</td>
-                                  <td>ERP/Data Mining  </td>
-                                  <td>ERP/Data Mining</td>
-                                  <td>NLP/AA</td>
-                                  <td>AA/NLP</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Thursday</td>
-                                  <td>IS</td>
-                                  <td>ERP/Mining</td>
-                                  <td>NLP/AA</td>
-                                  <td>OR</td>
-                                  <td>OR</td>
-                                  <td>TCP/IP</td>
-                                  <td>TCP/IP</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Friday</td>
-                                  <td>English</td>
-                                  <td>English</td>
-                                  <td>TCP/IP</td>
-                                  <td>OR</td>
-                                  <td>oR</td>
-                                  <td>Discus Project</td>
-                                  <td>Discus Project</td>
-                                </tr>
+
 
                               </tbody>
                             </table>
                           </div>
+
                           <!-- .card-block -->
                         </div>
+                        <%}%>
                         <!-- .card -->
                         <!-- End Classic table -->
                         <!-- End Introduction -->

@@ -63,51 +63,26 @@
                             <!-- Introduction -->
                             <h2 class="h3 m-t-lg m-b">Call Attendance</h2>
                             <!-- Classic table -->
-                            <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/calling"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>JavaScript</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>2 CS A</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/calling"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>Digital</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>3 CS A</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div class="col-lg-12 col-lg-3">
-                                <a href="/users/teachers/calling"><div class="card">
-                                    <div class="card-header bg-green bg-inverse">
-                                        <h4>Database</h4>
-                                        <ul class="card-actions">
-                                            <li>
-                                                <button type="button"><i class="ion-bookmark"></i></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-block">
-                                        <p>2 CS B</p>
-                                    </div>
-                                </div></a>
-                            </div>
+                            <% for(var i = 0; i< subj.length; i++){%>
+                              <div class="col-lg-12 col-lg-3">
+                                  <a href="/users/teachers/calling/<%= subj[i].class %>?sub=<%= subj[i].subname %>"><div class="card">
+                                      <div class="card-header bg-green bg-inverse">
+                                          <h4><%= subj[i].subname %></h4>
+                                          <ul class="card-actions">
+                                              <li>
+                                                  <button type="button"><i class="ion-bookmark"></i></button>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="card-block">
+                                          <p class="section-title"><%= subj[i].class %></p>
+                                          <p class="section-title">Time:  <%= subj[i].time %></p>
+                                      </div>
+                                  </div></a>
+                              </div>
+                            <%}%>
+
+
                             <!-- .card -->
                             <!-- End Classic table -->
                             <!-- End Introduction -->

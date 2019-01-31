@@ -10,6 +10,10 @@ var SubSchema=new Schema({
     type:String,
     require:true,
   },
+  subCode:{
+    type:String,
+    require:true,
+  },
   major:{
     type:String,
     require:true,

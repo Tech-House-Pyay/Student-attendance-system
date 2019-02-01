@@ -5,6 +5,7 @@
     <head>
         <!-- Meta -->
         <% include ../../partial/head %>
+        <script src="/assets/js/core/jquery.min.js"></script>
         <!-- End Stylesheets -->
     </head>
 
@@ -63,7 +64,7 @@
                             <!-- Introduction -->
                             <h2 class="h3 m-t-lg m-b">Time Table</h2>
                             <!-- Classic table -->
-                            <h2 class="section-title">Daw Moe Moe</h2>
+                            <h2 class="section-title"><%= subj[0].teacherName %></h2>
                             <div class="card">
                                 <div class="table-responsive">
                                     <table class="table table-borderless table-header-bg text-center m-b-0">
@@ -88,56 +89,45 @@
                                               <td></td>
                                               <td></td>
                                               <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-500 text-left">Monday</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Javascript</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-500 text-left">Tuesday</td>
-                                                <td>Social Science</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Social Science</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-500 text-left">Wednesday</td>
-                                                <td>Information</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Information</td>
-                                                <td>Social Science</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-500 text-left">Thursday</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Database</td>
-                                                <td>Information</td>
-                                                <td></td>
-                                                <td>Digtal Science</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-500 text-left">Friday</td>
-                                                <td>Social Science</td>
-                                                <td>Project Management</td>
-                                                <td>Digtal Science</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                              <% for(var i = 0; i< 35; i++){%>
+                                                <%if(i== 0 || i%7 == 0){%>
+                                                </tr>
+                                                <tr>
+                                                  <td class="font-500 text-left" id="t<%=i%>"></td>
+                                                  <script type="text/javascript">
+                                                  console.log('<%=i/7%>');
+                                                    switch ('<%=i/7%>') {
+                                                      case '0':
+                                                        $('#t<%=i%>').html('Monday')
+                                                        break;
+                                                      case '1':
+                                                        $('#t<%=i%>').html('Thursday')
+                                                        break;
+                                                      case '2':
+                                                        $('#t<%=i%>').html('Wednesday')
+                                                        break;
+                                                      case '3':
+                                                        $('#t<%=i%>').html('Tuesday')
+                                                        break;
+                                                      case '4':
+                                                        $('#t<%=i%>').html('Friday')
+                                                        break;
+                                                      default:
+
+                                                    }
+                                                  </script>
+                                                <%}%>
+                                                <% var status = true; for(var k =0; k < subj.length; k++){ %>
+                                                  <% if( i == ((7*(Number(subj[k].day)-1))+Number(subj[k].time))-1){ console.log(((7*(Number(subj[k].day)-1))+Number(subj[k].time))-1, i); status = false;%>
+                                                    <td><%= subj[k].subname %></td>
+                                                  <%}%>
+                                                <%}%>
+                                                <%if(status){%>
+                                                  <td></td>
+                                                <%}%>
+
+
+                                              <%}%>
                                             </tr>
 
                                         </tbody>

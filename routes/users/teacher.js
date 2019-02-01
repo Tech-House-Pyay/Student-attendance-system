@@ -16,7 +16,11 @@ router.get('/home', function(req, res, next) {
 });
 
 router.get('/timeTab', function(req, res, next) {
-  res.render('user/teacher/time-table', { title: 'Express' });
+  Timetable.find({teacherName:req.session.users.name},function (err,rtn) {
+    if(err) throw err;
+    console.log(rtn);
+    res.render('user/teacher/time-table', { title: 'Express', subj:rtn});
+  });
 });
 
 router.get('/callAtt', function(req, res, next) {
@@ -39,7 +43,6 @@ router.get('/manageAtt', function(req, res, next) {
     for (var i = 0; i < rtn.length; i++) {
       rtn[i].subj = _.uniq(rtn[i].subj);
     }
-    console.log(rtn);
     res.render('user/teacher/manage-att', { title: 'Express', sub: rtn});
   })
 
@@ -49,10 +52,11 @@ router.get('/manage/:id', function(req, res, next) {
   console.log(req.query.sub,req.session.users.id);
   Attendance.find({$and:[{subjectName:req.query.sub},{teacher_id:req.session.users.id}]},function (err,rtn) {
     if(err) throw err;
-    console.log(rtn);
-    res.render('user/teacher/manage', { title: 'Express'});
-  })
-
+    Student.find({class:req.params.id},function(err2,rtn2){
+      if(err2) throw err2;
+      res.render('user/teacher/manage', { title: 'Express', stu: rtn2, data: rtn, subj: req.query.sub, cla :req.params.id});
+    });
+  });
 });
 
 router.get('/calling/:id', function(req, res, next) {
@@ -74,7 +78,6 @@ router.post('/calling', function(req, res, next) {
   console.log(req.body.stuclass , req.body.sub);
   Student.find({class:req.body.stuclass},function (err,rtn) {
     if(err) throw err;
-    console.log(rtn);
     var m = new Date();
     var month = m.getMonth();
     var day = m.getDay();

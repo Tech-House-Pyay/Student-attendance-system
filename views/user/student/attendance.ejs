@@ -63,7 +63,7 @@
                         <!-- Introduction -->
                         <h2 class="h3 m-t-lg m-b">My Attendance</h2>
                         <!-- Classic table -->
-                        <h2 class="section-title">Mg Mg</h2>
+                        <h2 class="section-title"><%= name %></h2>
                         <div class="card">
                           <div class="table-responsive">
                             <table class="table table-borderless table-header-bg text-center m-b-0">
@@ -91,102 +91,22 @@
                                   <td></td>
                                   <td></td>
                                 </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Java</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Information</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Javascript</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Database</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Social Science</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Project Management</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Digtal Science</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
-                                <tr>
-                                  <td class="font-500 text-left">Total</td>
-                                  <td>80%</td>
-                                  <td>75%</td>
-                                  <td>72%</td>
-                                  <td>77%</td>
-                                  <td>80%</td>
-                                  <td>82%</td>
-                                  <td>84%</td>
-                                  <td>81%</td>
-                                  <td>81%</td>
-                                </tr>
+                                <% for(var i = 0; i< subj.length; i++){%>
+                                    <tr>
+                                      <td class="font-500 text-left"><%=subj[i]%></td>
+                                      <td id="<%=i%>11">0%</td>
+                                      <td id="<%=i%>0">0%</td>
+                                      <td id="<%=i%>1">0%</td>
+                                      <td id="<%=i%>2">0%</td>
+                                      <td id="<%=i%>5">0%</td>
+                                      <td id="<%=i%>6">0%</td>
+                                      <td id="<%=i%>7">0%</td>
+                                      <td id="<%=i%>8">0%</td>
+                                      <td id="<%=i%>t">0%</td>
+                              </tr>
+                            <%}%>
+
+
 
                               </tbody>
                             </table>
@@ -234,5 +154,27 @@
           <% include ../../partial/script %>
 
 </body>
+<script type="text/javascript">
+  <% for(var k =0; k< subj.length; k++){%>
+    var tc<%=k%> = 0; var tt<%=k%> =0;
+  <%}%>
+  <% for(var i = 0; i< data.length; i++){%>
+    var per = Math.floor((<%= data[i].count%>/<%= data[i].tolC%>)*100);
+      switch ('<%= data[i]._id.sub%>') {
+        <% for(var j= 0; j < subj.length; j++){%>
+          case '<%=subj[j]%>':
+              $('#<%=j%><%=data[i]._id.month%>').html(per+'%');
+              tc<%=j%> += per;
+              tt<%=j%> ++;
+            break;
+        <%}%>
+        default:
+
+      }
+  <%}%>
+  <% for(var y= 0; y < subj.length; y++){%>
+    $('#<%=y%>t').html(((isNaN(tc<%=y%>/tt<%=y%>) )? 0 : Math.floor(tc<%=y%>/tt<%=y%> ))+'%')
+  <%}%>
+</script>
 
 </html>

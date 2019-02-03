@@ -52,7 +52,7 @@ router.post('/signin', function(req, res, next) {
     if(rtn == null || rtn.password != req.body.password){
       res.redirect('/signin')
     }else{
-      req.session.users = {email: rtn.email, name: rtn.name, roll: "student"};
+      req.session.users = {email: rtn.email, name: rtn.name, roll: "student", cla: rtn.class, id:rtn._id};
       res.redirect('/users/students/home');
 
     }
